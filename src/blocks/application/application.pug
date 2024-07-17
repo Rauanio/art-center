@@ -1,0 +1,11 @@
+include ../components/_button
+
+mixin application 
+    .application
+        p.application__text Поможем с любым вопросом, напишите нам и мы свяжемся с вами в ближайшее время
+        +button('Оставить заявку', 'application')
+        .application__icon
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z" fill="currentColor"/>
+            </svg>
+

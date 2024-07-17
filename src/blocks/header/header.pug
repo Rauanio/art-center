@@ -1,0 +1,9 @@
+include ../components/_button
+include ../components/_menu
+
+mixin header
+    .header
+        .header__wrapper
+            img(src="/src/images/Logo (1).png" alt="Logo" class="header__img")
+            +menu
+            +menuButton('Меню', true)

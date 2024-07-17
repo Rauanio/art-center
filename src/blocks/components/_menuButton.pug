@@ -1,0 +1,5 @@
+mixin menuButton(text='Button', icon=false, toggleMenu)
+  button.btn.btn__menu(onclick=toggleMenu)
+    if icon
+      .btn__icon
+    | #{text}

@@ -1,0 +1,16 @@
+mixin footerSchedule(cls='')
+  -
+    const itemsSchedule = [
+      {name: 'АРТ Центр', time: 'с 9:00 до 2:00'},
+      {name: 'Фудхолл ДНК', time: 'с 10:00 до 2:00'},
+      {name: 'SPAR', time: 'с 9:00 до 23:00'},
+      {name: 'DDX', time: 'с 10:00 до 20:00'}
+    ]
+
+  .footer__schedule(class=`${cls}`)
+    .footer__schedule-items
+      each schedule in itemsSchedule
+        .footer__schedule-item
+          p= schedule.name
+          .footer__schedule-line
+          p= schedule.time

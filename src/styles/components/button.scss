@@ -1,0 +1,22 @@
+.btn {
+  color: $black;
+  border: 1px solid $black;
+  text-transform: uppercase;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn__type {
+  padding: 0 40px;
+  height: 56px;
+}
+
+@media (min-width: 768px) {
+  .btn__type {
+    font-size: 16px;
+    line-height: 16px;
+    height: 64px;
+  }
+}

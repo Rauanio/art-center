@@ -1,0 +1,45 @@
+include ../footer/footerMenu
+include ../footer/footerSchedule
+include ../footer/footerContact
+
+- 
+    const firstCardsItems = [
+        {name:'Покупки', color: '#30733E'},
+        {name:'Родителям и детям', color: '#A91F4C'},
+        {name:'Для развлечений', color: '#EA711A'}
+    ]
+
+- 
+    const secondCardsItems2 = [
+        {name:'Для бизнеса', color: '#738992'},
+        {name:'Для спорта', color: '#993333'},
+        {name:'Гостям Казани', color: '#125A67'}
+    ]
+
+mixin firstCards  
+    .burger__menu-cards1
+        each card in firstCardsItems 
+            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}`)
+                p.burger__menu-text(style=`color : ${card.color}`)= card.name
+
+mixin secondCards
+    .burger__menu-cards2
+        each card in secondCardsItems2 
+            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}`)
+                p.burger__menu-text(style=`color : ${card.color}`)= card.name                    
+
+mixin decorBlock
+    .decor
+        img(src="/src/images/triangle.svg", alt="triangle", class="decor__triangle")
+        .decor__square                
+
+
+mixin burgerMenu(isVisible)
+    .burger(class=isVisible ? 'burger__visible' : '')
+        .burger__menu 
+            +firstCards
+            +secondCards
+            +footerMenu('burger__footer-menu')
+            +decorBlock
+            +footerSchedule('burger__footer-schedule')
+            +footerContact('burger__footer-contact')

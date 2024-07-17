@@ -1,0 +1,19 @@
+mixin footerMenu(cls='')
+  - const itemsFirst = ['О центре', 'Акции и новости', 'Афиша', 'Фудхолл днк']
+  - const itemsSecond = ['Паркинг', 'Услуги', 'Арендаторам', 'Рекламодателям']
+  - const itemsThird = ['Карьера', 'тендеры', 'Контакты']
+
+    .footer__menu(class=`${cls}`)
+        ul.footer__menu-items
+          each itemOne in itemsFirst
+            li
+              a(href="#")= itemOne 
+        ul.footer__menu-items
+          each itemTwo in itemsSecond
+            li
+              a(href="#")= itemTwo
+        ul.footer__menu-items
+          each itemThree in itemsThird
+            li
+              a(href="#")= itemThree
+        .footer__menu-square

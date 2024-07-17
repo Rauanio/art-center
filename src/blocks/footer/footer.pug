@@ -1,0 +1,16 @@
+include footerMenu
+include footerSchedule
+include footerContact
+
+mixin footer
+  footer.footer
+    .footer__top-wrapper
+      +footerMenu
+      .footer__bottom-wrapper  
+        +footerSchedule
+        +footerContact       
+    .footer__terms
+      .footer__terms-copyright
+        p © 2023 АРТ Центр
+        a(href="#") Пользовательское соглашение  
+      img(src="/src/images/Copyright.png" alt="roso" class="footer__terms-img")    
