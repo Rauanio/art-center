@@ -19,14 +19,14 @@ include ../footer/footerContact
 mixin firstCards  
     .burger__menu-cards1
         each card in firstCardsItems 
-            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}`)
-                p.burger__menu-text(style=`color : ${card.color}`)= card.name
+            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}; --hover-background: ${card.color}`)
+                p.burger__menu-text(style=`--hover-color : ${card.color}`)= card.name
 
 mixin secondCards
     .burger__menu-cards2
         each card in secondCardsItems2 
-            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}`)
-                p.burger__menu-text(style=`color : ${card.color}`)= card.name                    
+            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}; --hover-background: ${card.color}`)
+                p.burger__menu-text(style=`--hover-color : ${card.color}`)= card.name                    
 
 mixin decorBlock
     .decor

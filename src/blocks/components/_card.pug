@@ -1,3 +1,5 @@
+include ./_roller
+
 - 
     const cardItems = [
         {name:'Покупки', color: '#30733E', img: 'card1'},
@@ -15,10 +17,13 @@
 mixin card
     .main__grid-cards 
         each card in cardItems
-            a.main__grid-card(href='#', style=`border: 1px solid ${card.color}`)
-                .main__grid-text(style=`color: ${card.color}`)
-                    img(src=`/src/images/${card.img}.svg`, alt=`${card.name}`, class="main__grid-img")
-                    p= card.name
+            a.main__grid-card(href='#', style=`border: 1px solid ${card.color}; --hover-background: ${card.color}; `)
+                .main__grid-text(style=`--hover-color: ${card.color};`)
+                    .main__grid-img
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M34.0458 12.4226H15.394L15.3711 6.27407L19.4286 2.34263L29.8287 2.23978L34.0686 6.68549L34.0458 12.4226ZM13.394 5.8855V12.4226H6.76562V47.0855H41.6339V12.4226H35.8968V5.8855L30.697 0.491211H19.3599H18.5943L13.394 5.8855ZM27.5313 31.0283H14.9487V44.434H27.5313V31.0283ZM35.4853 38.4226H29.9083V44.3654H35.4853V38.4226Z" fill="currentColor"/>
+                        </svg>
+                    +roller(card.name)
                 .main__grid-arrow
-                    svg(width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style=`color: ${card.color}`)
+                    svg(width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style=`--hover-icon: ${card.color}`)
                         path(d="M14.4556 18.2996L2 17.9791L2.10449 22L19.2971 22L19.318 21.9789L19.8962 21.3937L20.4883 20.8013L20.8018 20.4947L21.3939 19.9023L21.9721 19.317L21.993 19.2963L22 2.10446L17.9805 2L18.3079 15.0314L18.3218 15.4006L6.21456 3.28926L3.28875 6.20906L15.4239 18.3554L14.4556 18.2996Z")

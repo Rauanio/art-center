@@ -7,6 +7,7 @@
   flex-direction: column;
   gap: 16px;
   position: relative;
+  margin-top: 88px;
 
   &__grid {
     display: grid;
@@ -23,6 +24,30 @@
       justify-content: space-between;
       padding: 8px;
       min-height: 200px;
+      transition: all 0.6s ease;
+    }
+
+    &-card:hover {
+      background-color: var(--hover-background);
+      transition: all 0.6s ease;
+
+      .main__grid {
+        &-text,
+        &-arrow svg {
+          color: $white;
+          transition: all 0.6s ease;
+        }
+
+        &-arrow svg {
+          transition: all 0.6s ease;
+          transform: rotate(-90deg);
+        }
+
+        &-img path {
+          transition: all 0.6s ease;
+          fill: $white;
+        }
+      }
     }
 
     &-text {
@@ -32,16 +57,22 @@
       padding: 16px;
       font-size: 24px;
       line-height: 24px;
+      color: var(--hover-color);
+      transition: all 0.6s ease;
     }
 
-    &-img {
-      max-width: 48px;
-      height: auto;
+    &-img path {
+      fill: var(--hover-color);
     }
 
     &-arrow {
       padding: 24px;
       align-self: flex-end;
+    }
+
+    &-arrow svg {
+      color: var(--hover-icon);
+      transition: all 0.6s ease;
     }
   }
 }
@@ -51,6 +82,7 @@
   height: 360px;
   padding: 4px;
   background-color: $satured-dark-green;
+  position: sticky;
 }
 
 .application {
@@ -60,7 +92,7 @@
   justify-content: space-between;
   border: 1px solid $black;
   padding: 24px;
-  height: 300px;
+  min-height: 300px;
 
   &__text {
     max-width: 280px;
@@ -79,12 +111,14 @@
 .burger {
   display: none;
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   z-index: 10;
   background-color: $white;
-  padding-bottom: 16px;
+  padding: 0 8px 16px 8px;
+  height: calc(100vh - 88px);
+  overflow-y: auto;
 
   &__visible {
     display: flex;
@@ -112,12 +146,24 @@
 
     &-card {
       padding: 24px;
-      border: 1px solid $green;
+      transition: all 0.6s ease;
+    }
+
+    &-card:hover {
+      background-color: var(--hover-background);
+      transition: all 0.6s ease;
+
+      .burger__menu-text {
+        color: $white;
+        transition: all 0.6s ease;
+      }
     }
 
     &-text {
+      transition: all 0.6s ease;
       font-size: 18px;
       line-height: 18px;
+      color: var(--hover-color);
     }
   }
 }
@@ -151,6 +197,8 @@
 
 @media (min-width: 768px) {
   .main {
+    margin-top: 80px;
+
     &__grid-cards {
       grid-template-columns: 1fr 1fr;
       gap: 16px;
@@ -162,6 +210,11 @@
 
     &__grid-text {
       padding: 24px;
+    }
+
+    &__grid-img svg {
+      width: 56px;
+      height: 56px;
     }
   }
 
@@ -179,6 +232,11 @@
       width: 120px;
       height: 120px;
     }
+  }
+
+  .burger {
+    padding: 16px;
+    height: calc(100vh - 80px);
   }
 
   .burger__menu {
@@ -230,6 +288,8 @@
 
 @media (min-width: 1440px) {
   .main {
+    margin-top: 96px;
+
     &__grid {
       grid-template-columns: 1.4fr 1fr;
       gap: 16px;
@@ -242,22 +302,46 @@
       &-card {
         min-height: 300px;
       }
+
+      &-img {
+        width: 64px;
+        height: 64px;
+      }
+
+      &-arrow svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      &-text p {
+        font-size: 28px;
+        line-height: 28px;
+      }
     }
   }
 
-  .application__text {
-    max-width: 500px;
-    font-size: 28px;
-    line-height: 33.6px;
-  }
+  .application {
+    min-height: 310px;
 
-  .application__icon svg {
-    width: 144px;
-    height: 144px;
+    &__text {
+      max-width: 500px;
+      font-size: 28px;
+      line-height: 33.6px;
+    }
+
+    &__icon svg {
+      width: 144px;
+      height: 144px;
+    }
   }
 
   .btn__application {
     align-self: flex-start;
+  }
+
+  .burger {
+    padding: 0px 24px 24px 24px;
+    height: auto;
   }
 
   .burger__menu {
@@ -301,5 +385,6 @@
 
   .block {
     height: 680px;
+    top: 112px;
   }
 }
