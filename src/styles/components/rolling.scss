@@ -1,42 +1,51 @@
 .rolling-text {
   display: inline-block;
   overflow: hidden;
-  font-size: 18px;
-  line-height: 20px;
-  height: 20px;
+  font-size: 16px;
+  line-height: 16px;
+  display: none;
+}
 
-  &:hover,
-  &.play {
+@media (min-width: 1440px) {
+  .rolling-text {
+    font-size: 18px;
+    line-height: 18px;
+    height: 20px;
+    display: block;
+
+    &:hover,
+    &.play {
+      .letter {
+        transform: translateY(-100%);
+      }
+    }
+
+    .rolling__block:last-child {
+      color: $black;
+    }
+
     .letter {
-      transform: translateY(-100%);
+      display: inline-block;
+      transition: transform $duration $easing;
     }
   }
 
-  .rolling__block:last-child {
-    color: $black;
+  .main__grid-card .rolling-text {
+    font-size: 28px;
+    line-height: 30px;
+    height: 30px;
   }
 
-  .letter {
-    display: inline-block;
-    transition: transform $duration $easing;
+  .main__grid-card .letter {
+    transition: transform 0.6s ease;
   }
-}
 
-.main__grid-card .rolling-text {
-  font-size: 28px;
-  line-height: 30px;
-  height: 30px;
-}
+  .main__grid-card .rolling__block:last-child {
+    color: $white;
+  }
 
-.main__grid-card .letter {
-  transition: transform 0.6s ease;
-}
-
-.main__grid-card .rolling__block:last-child {
-  color: $white;
-}
-
-.main__grid-card:hover .rolling-text .letter,
-.main__grid-card.play .rolling-text .letter {
-  transform: translateY(-100%);
+  .main__grid-card:hover .rolling-text .letter,
+  .main__grid-card.play .rolling-text .letter {
+    transform: translateY(-100%);
+  }
 }

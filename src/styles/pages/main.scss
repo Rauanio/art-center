@@ -27,36 +27,13 @@
       transition: all 0.6s ease;
     }
 
-    &-card:hover {
-      background-color: var(--hover-background);
-      transition: all 0.6s ease;
-
-      .main__grid {
-        &-text,
-        &-arrow svg {
-          color: $white;
-          transition: all 0.6s ease;
-        }
-
-        &-arrow svg {
-          transition: all 0.6s ease;
-          transform: rotate(-90deg);
-        }
-
-        &-img path {
-          transition: all 0.6s ease;
-          fill: $white;
-        }
-      }
-    }
-
     &-text {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 16px;
-      font-size: 24px;
-      line-height: 24px;
+      font-size: 20px;
+      line-height: 20px;
       color: var(--hover-color);
       transition: all 0.6s ease;
     }
@@ -76,7 +53,6 @@
     }
   }
 }
-
 
 .block {
   min-width: 0;
@@ -150,16 +126,6 @@
       transition: all 0.6s ease;
     }
 
-    &-card:hover {
-      background-color: var(--hover-background);
-      transition: all 0.6s ease;
-
-      .burger__menu-text {
-        color: $white;
-        transition: all 0.6s ease;
-      }
-    }
-
     &-text {
       transition: all 0.6s ease;
       font-size: 18px;
@@ -211,6 +177,8 @@
 
     &__grid-text {
       padding: 24px;
+      font-size: 24px;
+      line-height: 24px;
     }
 
     &__grid-img svg {
@@ -304,6 +272,33 @@
         min-height: 300px;
       }
 
+      &-card:hover {
+        background-color: var(--hover-background);
+        transition: all 0.6s ease;
+
+        .main__grid {
+          &-text,
+          &-arrow svg {
+            color: $white;
+            transition: all 0.6s ease;
+          }
+
+          &-arrow svg {
+            transition: all 0.6s ease;
+            transform: rotate(-90deg);
+          }
+
+          &-img path {
+            transition: all 0.6s ease;
+            fill: $white;
+          }
+        }
+      }
+
+      &-paragraph {
+        display: none;
+      }
+
       &-img {
         width: 64px;
         height: 64px;
@@ -350,6 +345,16 @@
 
     &-card {
       padding: 32px;
+    }
+
+    &-card:hover {
+      background-color: var(--hover-background);
+      transition: all 0.6s ease;
+
+      .burger__menu-text {
+        color: $white;
+        transition: all 0.6s ease;
+      }
     }
 
     &-cards1 {
