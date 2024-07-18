@@ -13,11 +13,6 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  &__img {
-    max-width: 127px;
-    height: auto;
-  }
 }
 
 .btn__menu {
@@ -79,9 +74,9 @@
   .header {
     padding: 16px;
 
-    &__img {
-      max-width: 152px;
-      object-fit: contain;
+    &__wrapper svg {
+      width: 152px;
+      height: 48px;
     }
   }
 
