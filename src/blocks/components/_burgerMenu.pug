@@ -6,40 +6,33 @@ include ../footer/footerContact
     const firstCardsItems = [
         {name:'Покупки', color: '#30733E'},
         {name:'Родителям и детям', color: '#A91F4C'},
-        {name:'Для развлечений', color: '#EA711A'}
-    ]
-
-- 
-    const secondCardsItems2 = [
+        {name:'Для развлечений', color: '#EA711A'},
         {name:'Для бизнеса', color: '#738992'},
         {name:'Для спорта', color: '#993333'},
         {name:'Гостям Казани', color: '#125A67'}
     ]
 
+
+
 mixin firstCards  
-    .burger__menu-cards1
+    .burger__menu-cards
         each card in firstCardsItems 
             a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}; --hover-background: ${card.color}`)
                 p.burger__menu-text(style=`--hover-color : ${card.color}`)= card.name
 
-mixin secondCards
-    .burger__menu-cards2
-        each card in secondCardsItems2 
-            a.burger__menu-card(href="#" style=`border: 1px solid ${card.color}; --hover-background: ${card.color}`)
-                p.burger__menu-text(style=`--hover-color : ${card.color}`)= card.name                    
-
 mixin decorBlock
     .decor
-        img(src="/src/images/triangle.svg", alt="triangle", class="decor__triangle")
-        .decor__square                
+        svg(width="112" height="112" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class='decor__triangle')
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z" fill="#3A3943")
+        .decor__square
 
 
 mixin burgerMenu(isVisible)
     .burger(class=isVisible ? 'burger__visible' : '')
-        .burger__menu 
-            +firstCards
-            +secondCards
-            +footerMenu('burger__footer-menu')
-            +decorBlock
-            +footerSchedule('burger__footer-schedule')
-            +footerContact('burger__footer-contact')
+        .burger__menu
+            .burger__menu-wrapper 
+                +firstCards
+                +footerMenu('burger__footer-menu')
+                +decorBlock
+                +footerSchedule('burger__footer-schedule')
+                +footerContact('burger__footer-contact')

@@ -89,7 +89,6 @@
   width: 100%;
   z-index: 10;
   background-color: $white;
-  padding: 0 8px 16px 8px;
   height: calc(100vh - 88px);
   overflow-y: auto;
 
@@ -98,22 +97,17 @@
   }
 
   &__menu {
-    display: grid;
     width: 100%;
-    gap: 16px;
 
-    &-cards1,
-    &-cards2 {
+    &-wrapper {
       display: grid;
-      gap: 8px;
+      padding: 0 8px 16px 8px;
+      gap: 16px;
     }
 
-    &-cards1 {
-      margin-bottom: -8px;
-    }
-
-    &-grid {
-      display: grid;
+    &-cards {
+      display: flex;
+      flex-direction: column;
       gap: 8px;
     }
 
@@ -202,43 +196,29 @@
   .burger {
     padding: 16px;
     height: calc(100vh - 80px);
-  }
 
-  .burger__menu {
-    grid-template-columns: repeat(2, 1fr);
+    &__menu {
+      &-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
 
-    &-cards1,
-    &-cards2 {
-      gap: 16px;
+      &-cards {
+        gap: 16px;
+      }
+
+      &-text {
+        font-size: 20px;
+        line-height: 20px;
+      }
     }
 
-    &-cards1 {
-      grid-area: 1 / 1 / 2 / 2;
-      margin: 0;
+    &__footer-menu {
+      grid-template-columns: 1fr;
     }
 
-    &-cards1 {
-      grid-area: 2 / 1 / 3 / 2;
+    .footer__menu-square {
+      display: none;
     }
-
-    &-text {
-      font-size: 20px;
-      line-height: 20px;
-    }
-
-    &-grid {
-      gap: 16px;
-    }
-  }
-
-  .burger__footer-menu {
-    grid-template-columns: 1fr;
-    grid-area: 1 / 2 / 3 / 3;
-    gap: 0;
-  }
-
-  .footer__menu-square {
-    display: none;
   }
 
   .block {
@@ -328,11 +308,13 @@
 
   .burger {
     padding: 0px 24px 24px 24px;
-    height: auto;
+    height: calc(100vh - 96px);
   }
 
   .burger__menu {
-    grid-template-columns: 40% 45% 13%;
+    &-wrapper {
+      grid-template-columns: 40% 45% 13%;
+    }
 
     &-card {
       padding: 32px;
@@ -348,12 +330,9 @@
       }
     }
 
-    &-cards1 {
-      grid-area: 1 / 1 / 3 / 2;
-    }
-
-    &-cards2 {
-      grid-area: 3 / 1 / 5 / 2;
+    &-cards {
+      position: relative;
+      grid-area: 1 / 1 / 4 / 2;
     }
 
     &-text {
@@ -364,24 +343,31 @@
 
   .burger__footer-menu {
     grid-template-columns: 1fr 1fr;
-    grid-area: 1 / 2 / 3 / 3;
-  }
-
-  .burger__footer-schedule {
-    grid-area: 3 / 2 / 4 / 3;
   }
 
   .burger__footer-contact {
-    grid-area: 4 / 2 / 5 / 3;
-  }
-
-  .decor {
-    height: 100%;
-    grid-area: 1 / 3 / 5 / 4;
+    grid-column-end: 3;
   }
 
   .block {
     height: 680px;
     top: 112px;
+  }
+
+  .decor {
+    display: block;
+    grid-column-start: auto;
+    grid-row: span 3;
+    height: 100%;
+
+    &__triangle {
+      width: 167px;
+      height: 167px;
+    }
+
+    &__square {
+      width: 32px;
+      height: 32px;
+    }
   }
 }
