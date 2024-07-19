@@ -1,0 +1,6 @@
+mixin includeSvg(iconName)
+    - var svgPath = `/src/images/${iconName}.svg`
+    - const fs = require('fs')
+    - const path = require('path')
+    - const svgContent = fs.readFileSync(path.resolve(__dirname, svgPath), 'utf-8')
+    != svgContent

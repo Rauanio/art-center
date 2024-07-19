@@ -38,14 +38,6 @@
       transition: all 0.6s ease;
     }
 
-    &-img {
-      width: 48px;
-      height: 48px;
-      background-color: var(--hover-color);
-      mask: var(--card-svg) no-repeat center;
-      transition: all 0.6s ease;
-    }
-
     &-arrow {
       padding: 24px;
       align-self: flex-end;
@@ -185,7 +177,7 @@
       line-height: 24px;
     }
 
-    &__grid-img {
+    &__grid-img svg {
       width: 56px;
       height: 56px;
     }
@@ -291,11 +283,6 @@
             transition: all 0.6s ease;
             transform: rotate(-90deg);
           }
-
-          &-img {
-            transition: all 0.6s ease;
-            background: $white;
-          }
         }
       }
 
@@ -303,7 +290,7 @@
         display: none;
       }
 
-      &-img {
+      &-img svg {
         width: 64px;
         height: 64px;
       }
