@@ -38,8 +38,13 @@
       transition: all 0.6s ease;
     }
 
-    &-img path {
-      fill: var(--hover-color);
+    &-img {
+      width: 48px;
+      height: 48px;
+      background-color: var(--hover-color);
+      -webkit-mask: var(--card-svg) no-repeat center;
+      mask: var(--card-svg) no-repeat center;
+      transition: all 0.6s ease;
     }
 
     &-arrow {
@@ -181,7 +186,7 @@
       line-height: 24px;
     }
 
-    &__grid-img svg {
+    &__grid-img {
       width: 56px;
       height: 56px;
     }
@@ -288,9 +293,9 @@
             transform: rotate(-90deg);
           }
 
-          &-img path {
+          &-img {
             transition: all 0.6s ease;
-            fill: $white;
+            background: $white;
           }
         }
       }

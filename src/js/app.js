@@ -42,15 +42,12 @@ elements.forEach((element) => {
   let textContainer = document.createElement('div');
   textContainer.classList.add('rolling__block');
 
-  for (let letter of innerText) {
-    let span = document.createElement('span');
-    span.innerText = letter.trim() === '' ? '\xa0' : letter;
-    span.classList.add('letter');
-    textContainer.appendChild(span);
-  }
+  let span = document.createElement('span');
+  span.innerText = innerText;
+  span.classList.add('word');
+
+  textContainer.appendChild(span);
 
   element.appendChild(textContainer);
   element.appendChild(textContainer.cloneNode(true));
 });
-
-
