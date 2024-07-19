@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const globule = require('globule');
-const fs = require('fs');
+const globule = require("globule");
+const fs = require("fs");
 
 let mode = 'development';
 
@@ -10,17 +10,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const mixins = globule
-  .find([
-    'src/blocks/components/**/_*.pug',
-    '!src/blocks/components/_components.pug',
-  ])
-  .map((path) => path.split('/').pop())
-  .reduce((acc, currentItem) => acc + `include ${currentItem}\n`, ``);
+    .find(["src/blocks/components/**/_*.pug", "!src/blocks/components/_components.pug"])
+    .map((path) => path.split('/').pop())
+    .reduce((acc, currentItem) => acc + `include ${currentItem}\n`, ``);
 
-fs.writeFile('src/blocks/components/_components.pug', mixins, (err) => {
-  if (err) throw err;
-  console.log('Mixins are generated automatically!');
+fs.writeFile("src/blocks/components/_components.pug", mixins, (err) => {
+    if (err) throw err;
+    console.log("Mixins are generated automatically!");
 });
+
 
 module.exports = {
   mode,
@@ -74,34 +72,21 @@ module.exports = {
         ],
       },
       {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {
+            encoding: "base64",
+          },
+        },
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: 'assets/[hash][ext][query]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[hash][ext][query]',
-            },
-          },
-        ],
       },
       {
         test: /\.pug$/,
