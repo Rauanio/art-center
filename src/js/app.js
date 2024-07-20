@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (path.includes('purchases')) {
       body.classList.add('purchases');
-    } else if (path.includes('parentAndChild')) {
-      body.classList.add('parentAndChild');
+    } else if (path.includes('parents')) {
+      body.classList.add('parents');
     } else if (path.includes('activity')) {
       body.classList.add('activity');
     }

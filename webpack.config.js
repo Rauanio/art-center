@@ -49,9 +49,9 @@ module.exports = {
       directory: './src',
       watch: true,
     },
-    historyApiFallback: {
-      rewrites: [{ from: /^\/$/, to: '/main.html' }],
-    },
+    // historyApiFallback: {
+    //   rewrites: [{ from: /^\/$/, to: '/main.html' }],
+    // },
   },
   optimization: {
     splitChunks: {
