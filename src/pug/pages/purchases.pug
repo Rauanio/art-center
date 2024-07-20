@@ -1,0 +1,89 @@
+extends ../layout
+
+block content
+    - 
+        const categoryCards = [
+            {
+                title: 'Продукты',
+                cards: [
+                    {
+                        name: 'SPAR',
+                        desc: 'Мы в SPAR знаем, что питание — основа здоровой жизни, и хотим, чтобы каждый день на вашем столе была только качественная еда',
+                        img: 'test3',
+                        logo: 'card8'
+                    }
+                ]
+            },
+            {
+                title: 'Одежда',
+                cards: [
+                    {
+                        name: 'Сlever',
+                        img: 'purchase1',
+                        logo: 'purchase-logo'
+                    },
+                    {
+                        name: 'Gloria Jeans',
+                        desc: '',
+                        img: 'purchase2',
+                        logo: 'purchase-logo1'
+                    },
+                    {
+                        name: 'Zola',
+                        desc: '',
+                        img: 'purchase1',
+                        logo: 'purchase-logo2'
+                    },
+                    {
+                        name: 'kari',
+                        desc: '',
+                        img: 'purchase3',
+                        logo: 'purchase-logo3'
+                    },
+                ]
+            },
+            {
+                title: 'Спорт',
+                cards: [
+                    {
+                        name: 'Спортмастер',
+                        desc: '',
+                        img: 'purchase4',
+                        logo: 'purchase-logo4'
+                    },
+                    {
+                        name: 'Глобдрайв',
+                        desc: '',
+                        img: 'purchase5',
+                        logo: 'purchase-logo6'
+                    },
+                ]
+            },
+            {
+                title: 'Красота и здоровье',
+                cards: [
+                    {
+                        name: '585 Золото',
+                        desc: '',
+                        img: 'purchase6',
+                        logo: 'purchase-logo5'
+                    },
+                    {
+                        name: 'Подружка',
+                        desc: '',
+                        img: 'purchase7',
+                        logo: 'purchase-logo7'
+                    },
+                ]
+            }
+        ]
+
+    .purchases
+        +categoryLayout('Покупки')
+        .purchases__content 
+            +pageTabs
+            .page__wrapper
+                each category in categoryCards
+                    .page__category-block
+                        h4.page__category-title=category.title
+                        +categoryCard(category.cards)

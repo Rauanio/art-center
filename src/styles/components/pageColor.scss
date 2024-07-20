@@ -1,0 +1,49 @@
+@mixin page-styles($color) {
+  color: $color;
+
+  .btn__menu {
+    color: $color;
+    border-color: $color;
+  }
+
+  .btn__icon::after {
+    background-color: $color;
+    box-shadow: 0 7px 0 0 $color;
+  }
+
+  .footer__menu,
+  .footer__schedule,
+  .footer__contact {
+    &-square {
+      background-color: $color;
+    }
+  }
+
+  .footer__contact-messanger {
+    border-color: $color;
+  }
+
+  .word {
+    color: $color;
+  }
+
+  .nav__menu-active {
+    background-color: $color;
+  }
+
+  .nav__menu-wrapper {
+    border-color: $color;
+  }
+}
+
+body.purchases {
+  @include page-styles($satured-green);
+}
+
+body.parentAndChild {
+  @include page-styles($satured-pink);
+}
+
+body.activity {
+  @include page-styles($satured-orange);
+}

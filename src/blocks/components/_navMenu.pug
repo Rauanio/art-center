@@ -1,0 +1,42 @@
+- 
+  const navItems = [
+    {
+      name: 'Покупки',
+      href: 'purchases.html',
+    }, 
+    {
+      name: 'Родителям и детям',
+      href: 'parentAndChild.html',
+    },
+    {
+      name: 'Для развлечений',
+      href: 'activity.html',
+    },
+    {
+      name: 'Для бизнеса',
+      href: 'parentAndChild.html',
+    },
+    {
+      name: 'Для спорта',
+      href: 'parentAndChild.html',
+    },
+    {
+      name: 'Услуги',
+      href: 'parentAndChild.html',
+    },
+    {
+      name: 'Гостям Казани',
+      href: 'parentAndChild.html',
+    }
+  ]
+
+mixin navMenu(activePage='Покупки')
+  .nav__menu
+    .nav__menu-wrapper
+      each nav in navItems
+        a(href=nav.href, class=`nav__menu-item ${activePage === nav.name && 'nav__menu-active'}`)
+          if activePage === nav.name
+            p=nav.name
+          else
+            +roller(nav.name, 'nav__menu-roller')   
+

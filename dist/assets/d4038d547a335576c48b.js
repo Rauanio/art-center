@@ -1,0 +1,1 @@
+import"./components";import"../styles/styles.scss";document.addEventListener("DOMContentLoaded",(function(){var s=document.body;if(!s.getAttribute("class")){var t=window.location.pathname;t.includes("purchases")?s.classList.add("purchases"):t.includes("parentAndChild")?s.classList.add("parentAndChild"):t.includes("activity")&&s.classList.add("activity")}}));
