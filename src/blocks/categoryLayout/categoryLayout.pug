@@ -1,4 +1,15 @@
-mixin categoryLayout(page='')
+include ../application/application.pug
+include ./categoryCard.pug
+
+mixin categoryLayout(page='', tabItems=[], categoryCards=[])
   .category__layout
     +navMenu(page)
     +pageHeading(page)
+    .category__layout-content 
+      +pageTabs(tabItems)
+      .page__wrapper
+        each category in categoryCards
+          .page__category-block
+            h4.page__category-title(id=category.title)=category.title
+            +categoryCard(category)
+    +application('category__application')

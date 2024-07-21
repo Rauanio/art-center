@@ -1,0 +1,24 @@
+mixin cardItem(card)
+    a(href="#").page__category-card
+        .page__card-img
+            if card.img
+                img(src=`/src/images/${card.img}.png`, alt=`${card.name}`)
+            if card.logo
+                .page__card-logo 
+                    img(src=`/src/images/${card.logo}.svg`, alt=`${card.name}`)
+            if card.price
+                .page__card-price= card.price        
+        .page__card-info
+            .page__card-text  
+                h5.page__card-heading= card.name
+                if card.desc 
+                    p.page__card-paragraph= card.desc
+                if card.items
+                    .page__card-items
+                        each item, index in card.items
+                            .page__card-item= item
+                            if index != card.items.length - 1
+                                .page__card-square        
+            .page__card-icon
+                svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M14.4556 18.2996L2 17.9791L2.10449 22L19.2971 22L19.318 21.9789L19.8962 21.3937L20.4883 20.8013L20.8018 20.4947L21.3939 19.9023L21.9721 19.317L21.993 19.2963L22 2.10446L17.9805 2L18.3079 15.0314L18.3218 15.4006L6.21456 3.28926L3.28875 6.20906L15.4239 18.3554L14.4556 18.2996Z" fill="currentColor")

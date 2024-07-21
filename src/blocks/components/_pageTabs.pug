@@ -1,72 +1,8 @@
--
-  const pageTabsItems = [
-    {
-      name: 'Продукты',
-      quantity: 5,
-      href: '#',
-      active: true
-    },
-    {
-      name: 'Одежда',
-      quantity: 5,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Спорт',
-      quantity: 1,
-      href: '#',
-      active: false
-    },
-      {
-      name: 'Красота и здоровье',
-      quantity: 4,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Электроника',
-      quantity: 7,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Для дома',
-      quantity: 2,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Детям',
-      quantity: 7,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Аксессуары',
-      quantity: 9,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Аптека',
-      quantity: 5,
-      href: '#',
-      active: false
-    },
-    {
-      name: 'Подарки',
-      quantity: 5,
-      href: '#',
-      active: false
-    },
-  ]
-
-mixin pageTabs()
+mixin pageTabs(pageTabsItems=[])
   .page__tabs-wrapper
     .page__tabs-items
       each tab, index in pageTabsItems
         - const isLastItem = index === pageTabsItems.length - 1
-        a(href="", class=`page__tabs-item ${tab.active && 'page__tabs-active'} ${isLastItem && 'page__tabs-last'}`) 
+        a(href=`#${tab.href}`, class=`page__tabs-item  ${isLastItem && 'page__tabs-last'}`) 
           p=tab.name
           span=tab.quantity 

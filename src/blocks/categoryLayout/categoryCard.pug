@@ -1,0 +1,9 @@
+include ./posterCard
+include ./cardItem
+
+mixin categoryCard(category)
+    if category.cards && category.cards.length
+        each card in category.cards
+            +cardItem(card)
+    else if category.poster
+        +posterCard(category.poster)

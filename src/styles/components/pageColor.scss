@@ -11,15 +11,15 @@
     box-shadow: 0 7px 0 0 $color;
   }
 
+  .footer__contact-messanger,
   .footer__menu,
   .footer__schedule,
-  .footer__contact {
-    &-square {
-      background-color: $color;
-    }
-  }
-
-  .footer__contact-messanger {
+  .footer__schedule-line,
+  .footer__contact,
+  .nav__menu-wrapper,
+  .page__tabs-item,
+  .application,
+  .btn {
     border-color: $color;
   }
 
@@ -27,12 +27,16 @@
     color: $color;
   }
 
-  .nav__menu-active {
+  .page__tabs-active::after,
+  .page__tabs-active::before,
+  .page__category-card:hover,
+  .page__category-block::before,
+  .page__category-block::after,
+  .nav__menu-active,
+  .page__tabs-active,
+  .footer__menu-square,
+  .page__card-price {
     background-color: $color;
-  }
-
-  .nav__menu-wrapper {
-    border-color: $color;
   }
 }
 

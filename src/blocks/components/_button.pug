@@ -1,2 +1,4 @@
 mixin button(text='Кнопка', cls='')
-    button(class=`btn btn__type btn__${cls}`)=text 
+    button(class=`btn btn__type btn__${cls}`)
+        span.btn__text=text
+        +roller(text) 
