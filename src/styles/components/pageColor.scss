@@ -30,12 +30,14 @@
   .page__tabs-active::after,
   .page__tabs-active::before,
   .page__category-card:hover,
+  .poster-hover:hover,
   .page__category-block::before,
   .page__category-block::after,
   .nav__menu-active,
   .page__tabs-active,
   .footer__menu-square,
-  .page__card-price {
+  .page__card-price,
+  .page__card-square {
     background-color: $color;
   }
 }
@@ -50,4 +52,20 @@ body.parents {
 
 body.activity {
   @include page-styles($satured-orange);
+}
+
+body.business {
+  @include page-styles($satured-gray);
+}
+
+body.sport {
+  @include page-styles($satured-red);
+}
+
+body.services {
+  @include page-styles($satured-dark-green);
+}
+
+body.guests {
+  @include page-styles($satured-cyan);
 }

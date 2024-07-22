@@ -1,10 +1,38 @@
 include ./_roller
-
-- var menuItems = ['О центре', 'Акции и новости', 'Афиша', 'Фудхолл ДНК', 'Как добраться', 'Карта центра']
+//- ['О центре', 'Акции и новости', 'Афиша', 'Фудхолл ДНК', 'Как добраться', 'Карта центра']
 
 mixin menu
+
+    - 
+        const menuItems = [
+            {
+                name: 'О центре',
+                href: '/about.html'
+            },
+            {
+                name: 'Акции и новости',
+                href: '#'
+            },
+            {
+                name: 'Афиша',
+                href: '#'
+            },
+            {
+                name: 'Фудхолл ДНК',
+                href: '#'
+            },
+            {
+                name: 'Как добраться',
+                href: '#'
+            },
+            {
+                name: 'Карта центра',
+                href: '#'
+            }
+        ]
+
     ul.menu  
         each item in menuItems
             li
-                a(href="#")
-                    +roller(item)  
+                a(href=item.href)
+                    +roller(item.name)  

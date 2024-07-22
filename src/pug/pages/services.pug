@@ -1,0 +1,65 @@
+extends ../layout
+
+block content
+    - 
+        const servicesCategoryCards = [
+            {
+                title: 'Автомойка',
+                cards: [
+                    {
+                        name: 'Aqua',
+                        img: 'services1',
+                        logo: 'services-logo1'
+                    }
+                ]
+            },
+            {
+                title: 'Парикмахерская',
+                cards: [
+                    {
+                        name: 'Lotus',
+                        img: 'services2',
+                        logo: 'services-logo2'
+                    },
+                    {
+                        name: 'Beauty studio',
+                        img: 'services2',
+                        logo: 'services-logo2'
+                    },
+                ]
+            },
+            {
+                title: 'Салон маникюра',
+                cards: [
+                    {
+                        name: 'Руки нам',
+                        img: 'services3',
+                        logo: 'services-logo3'
+                    },
+                    {
+                        name: 'Nail Sunny',
+                        img: 'services3',
+                        logo: 'services-logo3'
+                    },
+
+                ]
+            },
+        ]
+
+    -  
+        const servicesTabItems = [
+            {
+                name: 'Автомойка',
+                href: 'Автомойка'
+            },
+            {
+                name: 'Парикмахерская',
+                href: 'Парикмахерская'
+            },
+            {
+                name: 'Салон маникюра',
+                href: 'Салон маникюра'
+            },
+        ]
+
+    +categoryLayout('Услуги', servicesTabItems, servicesCategoryCards)

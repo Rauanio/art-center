@@ -1,9 +1,10 @@
 include ../application/application.pug
 include ./categoryCard.pug
 
-mixin categoryLayout(page='', tabItems=[], categoryCards=[])
+mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true)
   .category__layout
-    +navMenu(page)
+    if showMenu
+      +navMenu(page)
     +pageHeading(page)
     .category__layout-content 
       +pageTabs(tabItems)

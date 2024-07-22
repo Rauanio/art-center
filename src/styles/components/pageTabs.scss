@@ -15,7 +15,7 @@
     justify-content: center;
     gap: 8px;
     padding: 0 20px;
-    border: 1px solid $satured-green;
+    border: 1px solid $black;
     border-right: none;
     height: 56px;
     text-transform: uppercase;
@@ -27,7 +27,7 @@
   }
 
   &-active {
-    background-color: $satured-green;
+    background-color: $black;
     color: $white;
     border-width: 2px;
     position: relative;
@@ -46,7 +46,7 @@
     &-wrapper {
       width: 100%;
       padding: 24px 0;
-      max-width: 336px;
+      max-width: 340px;
     }
 
     &-items {
@@ -64,7 +64,7 @@
 
     &-item {
       width: 100%;
-      border: 1px solid $satured-green;
+      border: 1px solid;
       border-top: none;
       justify-content: space-between;
       font-size: 16px;
@@ -78,7 +78,7 @@
       left: 100%;
       width: 100px;
       height: 1px;
-      background-color: $satured-green;
+      background-color: $black;
     }
 
     &-active::before {
@@ -88,7 +88,7 @@
       right: -107px;
       width: 7px;
       height: 7px;
-      background-color: $satured-green;
+      background-color: $black;
     }
   }
 }

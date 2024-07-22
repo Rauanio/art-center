@@ -10,6 +10,7 @@
   gap: 40px;
   padding: 16px 0;
   width: 100%;
+  min-width: 0;
 }
 
 .category__application {
@@ -59,7 +60,7 @@
 }
 
 .page__category-poster {
-  border: 1px solid $satured-pink;
+  border: 1px solid;
   padding: 8px;
 }
 
@@ -308,7 +309,7 @@
     transition: all 0.6s ease;
   }
 
-  .page__category-poster:hover {
+  .poster-hover:hover {
     background-color: $satured-pink;
     transition: all 0.6s ease;
 
@@ -342,9 +343,13 @@
 
     &-desc {
       padding: 32px;
-      max-width: 60%;
+      max-width: 75%;
       transition: all 0.6s ease;
     }
+  }
+
+  .poster__desc-btn {
+    max-width: 100%;
   }
 
   .page__category-title {

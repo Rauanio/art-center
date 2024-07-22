@@ -1,4 +1,6 @@
 include ./posterCard
+include ./sliderCard
+include ./offerCard
 include ./cardItem
 
 mixin categoryCard(category)
@@ -7,3 +9,8 @@ mixin categoryCard(category)
             +cardItem(card)
     else if category.poster
         +posterCard(category.poster)
+    else if category.slider
+        +sliderCard(category.slider.img)
+    else if category.offerCards
+        each offer in category.offerCards
+            +offerCard(offer)

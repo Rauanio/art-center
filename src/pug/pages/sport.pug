@@ -1,0 +1,61 @@
+extends ../layout
+
+block content
+    - 
+        const sportCategoryCards = [
+            {
+                title: 'Современный фитнес-клуб «DDX»',
+                poster: {
+                    desc: 'Супер-технологичный тренажёрный зал, оборудованный в партнёрстве с итальянской компанией Technogym - идеальное место для быстрого и безопасного достижения любых фитнес целей',
+                    img: 'poster4',
+                    arrow: true
+                }
+            },
+            {
+                title: 'Магазины',
+                cards: [
+                    {
+                        name: 'Спортмастер',
+                        img: 'purchase4',
+                        logo: 'purchase-logo4'
+                    },
+                    {
+                        name: 'Глобдрайв',
+                        img: 'purchase5',
+                        logo: 'purchase-logo6'
+                    },
+                    {
+                        name: '36 магазинов'
+                    }
+                ]
+            },
+            {
+                title: 'Велодорожки и велопарковки',
+                poster: {
+                    img: 'poster2',
+                    desc: 'Комфортно перемещайтесь по территории на велосипедах. Мы обеспечим вам удобство и экологичность передвижения'
+                }
+            },
+        ]
+
+    -  
+        const sportTabItems = [
+            {
+                name: 'Фитнес-клуб',
+                href: 'Современный фитнес-клуб «DDX»'
+            },
+            {
+                name: 'Магазины',
+                href: 'Магазины'
+            },
+            {
+                name: 'Мероприятия',
+                href: 'Мероприятия'
+            },
+            {
+                name: 'Велодорожки и велопарковки',
+                href: 'Велодорожки и велопарковки'
+            },
+        ]
+
+    +categoryLayout('Для спорта', sportTabItems, sportCategoryCards)
