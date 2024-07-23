@@ -1,0 +1,12 @@
+include ./advertisingManager
+include ./advertisingPoster
+
+mixin advertisingLayout(page='')
+    .page__layout
+        +pageHeading(page)
+        .advertising__wrapper
+            +advertisingManager
+            +advertisingPoster
+
+
+

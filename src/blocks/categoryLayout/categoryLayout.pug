@@ -2,7 +2,7 @@ include ../application/application.pug
 include ./categoryCard.pug
 
 mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true)
-  .category__layout
+  .page__layout
     if showMenu
       +navMenu(page)
     +pageHeading(page)
@@ -10,7 +10,7 @@ mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true)
       +pageTabs(tabItems)
       .page__wrapper
         each category in categoryCards
-          .page__category-block
-            h4.page__category-title(id=category.title)=category.title
+          .page__category-block(id=category.title)
+            h4.page__category-title=category.title
             +categoryCard(category)
     +application('category__application')

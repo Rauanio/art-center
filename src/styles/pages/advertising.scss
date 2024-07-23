@@ -1,0 +1,284 @@
+.advertising__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.advertising__manager {
+  &-wrapper {
+    display: grid;
+    gap: 8px;
+  }
+
+  &-paragraph {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &-bottom {
+    display: none;
+  }
+
+  &-card {
+    border: 1px solid $black;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  &-image {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &-text {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &-img {
+    max-width: 112px;
+    height: auto;
+  }
+
+  &-name {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &-desc {
+    opacity: 0.7;
+    line-height: 16.8px;
+    font-family: Raleway;
+  }
+
+  &-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px 16px 16px;
+  }
+
+  &-line2 {
+    background-color: $black;
+    height: 2px;
+    width: 100%;
+    opacity: 0.1;
+  }
+
+  &-email {
+    text-transform: uppercase;
+  }
+}
+
+.advertising__poster {
+  display: grid;
+  gap: 8px;
+  border: 1px solid $black;
+  padding: 8px;
+
+  &-img {
+    position: relative;
+    color: $white;
+  }
+
+  &-img img {
+    max-width: 100%;
+  }
+
+  &-square {
+    background-color: $white;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  &-img svg {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  &-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &-desc {
+    line-height: 21px;
+    font-family: Raleway;
+  }
+}
+
+@media (min-width: 768px) {
+  .advertising__wrapper {
+    gap: 16px;
+  }
+
+  .advertising__manager {
+    &-head {
+      display: none;
+    }
+
+    &-text {
+      padding: 0;
+    }
+
+    &-desc {
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+
+    &-name {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+
+    &-paragraph {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+
+    &-bottom {
+      font-size: 16px;
+      line-height: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-line2 {
+      display: none;
+    }
+
+    &-line1 {
+      background-color: $black;
+      height: 2px;
+      width: 100%;
+      opacity: 0.1;
+    }
+
+    &-image {
+      align-items: normal;
+    }
+
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      width: 100%;
+    }
+
+    &-img {
+      max-width: 227px;
+    }
+  }
+
+  .advertising__poster {
+    &-text {
+      padding: 24px;
+    }
+
+    &-square {
+      width: 28px;
+      height: 28px;
+      bottom: 16px;
+      left: 16px;
+    }
+
+    &-img svg {
+      width: 112px;
+      height: 112px;
+      top: 16px;
+      right: 16px;
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+
+    &-desc {
+      font-size: 18px;
+      line-height: 27px;
+      font-family: Raleway;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .advertising__wrapper {
+    gap: 24px;
+    padding: 24px 0;
+  }
+
+  .advertising__manager {
+    &-wrapper {
+      grid-template-columns: 50% 49%;
+      gap: 16px;
+      border: 1px solid $black;
+      padding: 8px;
+    }
+
+    &-card {
+      border: none;
+      padding: 0;
+    }
+
+    &-paragraph,
+    &-name {
+      font-size: 28px;
+      line-height: 33.6px;
+    }
+
+    &-paragraph {
+      padding: 32px;
+    }
+
+    &-heading {
+      padding: 32px;
+      justify-content: normal;
+      gap: 24px;
+    }
+  }
+
+  .advertising__poster {
+    grid-template-columns: 66% 34%;
+
+    &-text {
+      padding: 32px;
+    }
+
+    &-square {
+      width: 32px;
+      height: 32px;
+    }
+
+    &-img svg {
+      width: 138px;
+      height: 138px;
+    }
+
+    &-title {
+      font-size: 28px;
+      line-height: 33.6px;
+    }
+  }
+}

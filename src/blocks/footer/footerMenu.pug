@@ -1,19 +1,41 @@
-mixin footerMenu(cls='')
-  - const itemsFirst = ['О центре', 'Акции и новости', 'Афиша', 'Фудхолл днк']
-  - const itemsSecond = ['Паркинг', 'Услуги', 'Арендаторам', 'Рекламодателям']
-  - const itemsThird = ['Карьера', 'тендеры', 'Контакты']
+- 
+  var itemsFirst = [
+    { name: 'О центре', href: '/about.html' },
+    { name: 'Акции и новости', href: '/about.html' },
+    { name: 'Афиша', href: '/about.html' },
+    { name: 'Фудхолл днк', href: '/about.html' }
+  ]
 
-    .footer__menu(class=`${cls}`)
-        ul.footer__menu-items
-          each itemOne in itemsFirst
-            li
-              a(href="#")= itemOne 
-        ul.footer__menu-items
-          each itemTwo in itemsSecond
-            li
-              a(href="#")= itemTwo
-        ul.footer__menu-items
-          each itemThree in itemsThird
-            li
-              a(href="#")= itemThree
-        .footer__menu-square
+- 
+  var itemsSecond = [
+    { name: 'Паркинг', href: '#' },
+    { name: 'Услуги', href: '/services.html' },
+    { name: 'Арендаторам', href: '/tenant.html' },
+    { name: 'Рекламодателям', href: '/advertising.html' }
+  ]
+
+- 
+  var itemsThird = [
+    { name: 'Карьера', href: '#' },
+    { name: 'Тендеры', href: '#' },
+    { name: 'Контакты', href: '#' }
+  ]
+
+
+mixin footerMenu(cls='')
+  .footer__menu(class=cls)
+    ul.footer__menu-items
+      each item in itemsFirst
+        li
+          a(href=item.href)= item.name 
+    ul.footer__menu-items
+      each item in itemsSecond
+        li
+          a(href=item.href)= item.name
+    ul.footer__menu-items
+      each item in itemsThird
+        li
+          a(href=item.href)= item.name
+    .footer__menu-square
+
+

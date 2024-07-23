@@ -1,4 +1,4 @@
-.category__layout {
+.page__layout {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -309,8 +309,12 @@
     transition: all 0.6s ease;
   }
 
+  .poster-desc {
+    color: $black;
+  }
+
   .poster-hover:hover {
-    background-color: $satured-pink;
+    background-color: $black;
     transition: all 0.6s ease;
 
     .poster-desc {
@@ -363,39 +367,45 @@
     height: 32px;
   }
 
-  .page__category-card,
-  .page__card-text,
-  .page__card-icon {
-    transition: all 0.6s ease;
-  }
-
   .page__card-heading {
     font-size: 28px;
     line-height: 33.6px;
   }
 
-  .page__card-square {
-    transition: all 0.6s ease;
-  }
-
-  .page__category-card:hover {
-    background-color: $satured-green;
-    transition: all 0.6s ease;
+  .page__category-card {
+    background-color: $white;
+    transition: background-color 0.6s ease;
 
     .page__card-text {
-      color: $white;
-      transition: all 0.6s ease;
+      color: $satured-green;
+      transition: color 0.6s ease;
     }
 
     .page__card-square {
-      background-color: $white;
-      transition: all 0.6s ease;
+      transition: background-color 0.6s ease;
     }
 
     .page__card-icon {
-      color: $white;
-      transition: all 0.6s ease;
-      transform: rotate(-90deg);
+      transition:
+        color 0.6s ease,
+        transform 0.6s ease;
+    }
+
+    &:hover {
+      background-color: $satured-green;
+
+      .page__card-text {
+        color: $white;
+      }
+
+      .page__card-square {
+        background-color: $white;
+      }
+
+      .page__card-icon {
+        color: $white;
+        transform: rotate(-90deg);
+      }
     }
   }
 }

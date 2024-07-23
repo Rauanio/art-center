@@ -23,7 +23,9 @@
     border-color: $color;
   }
 
-  .word {
+  .word,
+  .page__card-text,
+  .poster-desc {
     color: $color;
   }
 
