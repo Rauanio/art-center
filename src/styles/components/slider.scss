@@ -82,7 +82,7 @@
 }
 
 @media (min-width: 768px) {
-  .swiper {
+  .main-slider {
     &-slide img {
       max-height: 361px;
     }
@@ -114,13 +114,13 @@
 }
 
 @media (min-width: 1440px) {
-  .swiper {
+  .main-slider {
     &-slide img {
       max-height: 395px;
     }
 
     &:hover {
-      .swiper-arrow-wrapper svg {
+      .main-slider-arrow-wrapper svg {
         transition: all 0.6s ease;
         transform: rotate(-90deg);
       }
