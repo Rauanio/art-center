@@ -11,6 +11,7 @@ mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true)
       .page__wrapper
         each category in categoryCards
           .page__category-block(id=category.title)
+            span.page__category-block-line
             h4.page__category-title=category.title
             +categoryCard(category)
     +application('category__application')

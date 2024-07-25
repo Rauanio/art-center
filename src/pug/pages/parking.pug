@@ -1,0 +1,57 @@
+extends ../layout
+
+block content
+    -
+        const parkingCardItems = [
+            {
+                title: 'Время работы',
+                items: [
+                    {
+                        name: 'Ежедневно',
+                        item: 'с 9:00 до 2:00'
+                    }
+                ]
+            },
+            {
+                title: 'Стоимость',
+                items: [
+                    {
+                        name: 'Первый час',
+                        item: 'Бесплатно'
+                    },
+                    {
+                        name: 'Со второго часа',
+                        item: '40 ₽ /час'
+                    }
+                ]
+            },
+            {
+                title: 'Способы оплаты',
+                items: [
+                    {
+                        name: 'На въезде',
+                        item: 'Наличные или картой'
+                    },
+                    {
+                        name: 'У сектора «Б»',
+                        item: 'картой'
+                    }
+                ]
+            }
+        ]
+
+    .parking__wrapper
+        +pageHeading('Паркинг')
+        .parking__card-wrapper
+            .parking__cards
+                each card in parkingCardItems
+                    .parking__card
+                        h5.parking__card-title=card.title
+                        .parking__bottom-wrapper
+                            each item in card.items
+                                .parking__card-bottom
+                                    p.parking__card-name=item.name
+                                    .parking__card-line
+                                    p.parking__card-item=item.item
+            +advertisingPoster('parking','Удобный паркинг с 3 выездами', 'Арендуйте пространство для мероприятий в нашем арт-пространстве, мы создадим идеальные условия для вашего события')
+            +application

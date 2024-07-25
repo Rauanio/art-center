@@ -1,0 +1,229 @@
+.tabs {
+  padding: 16px 0;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  &__application {
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 24px;
+    height: 46px;
+    width: 100%;
+    text-transform: uppercase;
+
+    &-active {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+
+    &-pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $black;
+      padding: 8px;
+    }
+
+    &-wrapper {
+      padding: 16px;
+    }
+
+    &-wrapper p {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &-arrow {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+    }
+
+    &-item {
+      display: grid;
+      gap: 8px;
+      display: none;
+    }
+    &-active {
+      display: grid;
+    }
+  }
+}
+
+.tab__card {
+  border: 1px solid var(--card-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+
+  &-wrapper {
+    position: relative;
+  }
+
+  &-img {
+    width: 100%;
+    max-height: 258px;
+  }
+
+  &-wrapper svg {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: $white;
+  }
+
+  &-banner {
+    position: absolute;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    height: 32px;
+    left: 8px;
+    bottom: 8px;
+    color: var(--card-color);
+    line-height: 19.6px;
+  }
+
+  &-text {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 16px;
+    color: var(--card-color);
+  }
+}
+
+@media (min-width: 768px) {
+  .tabs__btn {
+    padding: 0 32px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .tabs__content {
+    padding-top: 24px;
+    gap: 16px;
+
+    &-wrapper {
+      padding: 24px;
+    }
+
+    &-wrapper p {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+
+    &-arrow {
+      padding: 24px;
+    }
+
+    &-item {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+
+  .tab__card {
+    &-wrapper svg {
+      width: 80px;
+      height: 80px;
+    }
+
+    &-banner {
+      font-size: 16px;
+      line-height: 22.4px;
+    }
+
+    &-text {
+      font-size: 24px;
+      line-height: 28.8px;
+      padding: 24px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .tabs {
+    padding: 24px 0;
+
+    &__application {
+      margin-bottom: 24px;
+    }
+  }
+
+  .tabs__content {
+    &-wrapper {
+      padding: 32px;
+    }
+
+    &-wrapper p {
+      font-size: 28px;
+      line-height: 33.6px;
+    }
+
+    &-arrow {
+      padding: 32px;
+    }
+
+    &-arrow svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .tabs__content-item {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tab__card {
+    transition: background-color 0.6s ease;
+    &-img {
+      max-height: 328px;
+    }
+
+    &-wrapper svg {
+      width: 96px;
+      height: 96px;
+    }
+
+    &-text {
+      font-size: 28px;
+      line-height: 33.6px;
+      padding: 32px;
+      transition: color 0.6s ease;
+    }
+
+    &:hover {
+      background-color: var(--card-color);
+      transition: background-color 0.6s ease;
+
+      .tab__card-text {
+        color: $white;
+        transition: color 0.6s ease;
+      }
+    }
+  }
+}
