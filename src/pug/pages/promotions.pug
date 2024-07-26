@@ -1,7 +1,138 @@
 extends ../layout
 
 block content
-    .promotions
+    - 
+        const promotionItems = [
+            {
+                name: 'Все',
+                content: [
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Финальная распродажа в СТОКМАНН!',
+                        img: 'purchase1',
+                        color: '#30733E'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Скидка 30% на всё!',
+                        img: 'purchase2',
+                        color: '#A91F4C'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'MARCIANO by GUESS дарит подарки!',
+                        img: 'purchase3',
+                        color: '#EA711A'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Летнее настроение в Motherbear',
+                        img: 'purchase7',
+                        color: '#738992'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Скидки 30% на всё в JUST CLOTHES',
+                        img: 'purchase5',
+                        color: '#738992'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Лето – время блистать!',
+                        img: 'purchase6',
+                        color: '#738992'
+                    }
+                ]
+            },
+            {
+                name: 'Акций',
+                content: [
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Финальная распродажа в СТОКМАНН!',
+                        img: 'purchase1',
+                        color: '#30733E'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Скидка 30% на всё!',
+                        img: 'purchase2',
+                        color: '#A91F4C'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Скидки 30% на всё в JUST CLOTHES',
+                        img: 'purchase5',
+                        color: '#738992'
+                    },
+                ]
+            },
+            {
+                name: 'Новости',
+                content: [
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'MARCIANO by GUESS дарит подарки!',
+                        img: 'purchase3',
+                        color: '#EA711A'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Летнее настроение в Motherbear',
+                        img: 'purchase7',
+                        color: '#738992'
+                    },
+                ]
+            },
+            {
+                name: 'Скидки',
+                content: [
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Финальная распродажа в СТОКМАНН!',
+                        img: 'purchase1',
+                        color: '#30733E'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Скидка 30% на всё!',
+                        img: 'purchase2',
+                        color: '#A91F4C'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Скидки 30% на всё в JUST CLOTHES',
+                        img: 'purchase5',
+                        color: '#738992'
+                    },
+                ]
+            },
+            {
+                name: 'События',
+                content: [
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Лето – время блистать!',
+                        img: 'purchase6',
+                        color: '#738992'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'MARCIANO by GUESS дарит подарки!',
+                        img: 'purchase3',
+                        color: '#EA711A'
+                    },
+                    {
+                        banner: '16 января - 7 февряли',
+                        name: 'Летнее настроение в Motherbear',
+                        img: 'purchase7',
+                        color: '#738992'
+                    },
+                ]
+            }
+        ]
+
+    .page__layout
         +pageHeading('Акций и новости')
-        +tabs
+        +tabs(promotionItems)
         +application('tabs__application')

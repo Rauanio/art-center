@@ -1,0 +1,181 @@
+extends ../layout
+
+block content
+
+    -
+        const foodhallItems = [
+            {
+                name: 'Все',
+                content: [
+                    {
+                        banner: 'Татарская',
+                        rating: '4.5',
+                        name: 'Малабар',
+                        img: 'foodhall',
+                        color: '#30733E'
+                    },
+                    {
+                        banner: 'Европейская',
+                        rating: '4.5',
+                        name: 'Черновар',
+                        img: 'foodhall',
+                        color: '#A91F4C'
+                    },
+                    {
+                        banner: 'Русская',
+                        rating: '4.5',
+                        name: 'Beerhouse',
+                        img: 'foodhall',
+                        color: '#EA711A'
+                    },
+                    {
+                        banner: 'Русская',
+                        rating: '4.5',
+                        name: 'Экстра Лаунж By Extra Project',
+                        img: 'foodhall',
+                        color: '#738992'
+                    },
+                    {
+                        banner: 'Азиатская',
+                        rating: '4.5',
+                        name: 'Лофт Ресторан На Крыше',
+                        img: 'foodhall',
+                        color: '#993333'
+                    },
+                    {
+                        banner: 'Японская',
+                        rating: '4.5',
+                        name: 'Ресторан 4 Kухни',
+                        img: 'foodhall',
+                        color: '#195734'
+                    },
+                    {
+                        banner: 'Азиатская',
+                        rating: '4.5',
+                        name: 'Mathilde',
+                        img: 'foodhall',
+                        color: '#125A67'
+                    },
+                    {
+                        banner: 'Русская',
+                        rating: '4.5',
+                        name: 'Приют Холостяка',
+                        img: 'foodhall',
+                        color: '#30733E'
+                    },
+                    {
+                        banner: 'Европейская',
+                        rating: '4.5',
+                        name: 'Паста Bar',
+                        img: 'foodhall',
+                        color: '#A91F4C'
+                    }
+                ]
+            },
+            {
+                name: 'Татарская',
+                content: [
+                    {
+                        banner: 'Татарская',
+                        rating: '4.5',
+                        name: 'Малабар',
+                        img: 'foodhall',
+                        color: '#30733E'
+                    },
+                ]
+            },
+            {
+                name: 'Русская',
+                content: [
+                    {
+                        banner: 'Русская',
+                        rating: '4.5',
+                        name: 'Приют Холостяка',
+                        img: 'foodhall',
+                        color: '#30733E'
+                    },
+                    {
+                        banner: 'Русская',
+                        rating: '4.5',
+                        name: 'Beerhouse',
+                        img: 'foodhall',
+                        color: '#EA711A'
+                    },
+                    {
+                        banner: 'Русская',
+                        rating: '4.5',
+                        name: 'Экстра Лаунж By Extra Project',
+                        img: 'foodhall',
+                        color: '#738992'
+                    },
+                ]
+            },
+            {
+                name: 'Азиатская',
+                content: [
+                    {
+                        banner: 'Азиатская',
+                        rating: '4.5',
+                        name: 'Лофт Ресторан На Крыше',
+                        img: 'foodhall',
+                        color: '#993333'
+                    },
+                    {
+                        banner: 'Азиатская',
+                        rating: '4.5',
+                        name: 'Mathilde',
+                        img: 'foodhall',
+                        color: '#125A67'
+                    },
+                ]
+            },
+            {
+                name: 'Японская',
+                content: [
+                    {
+                        banner: 'Японская',
+                        rating: '4.5',
+                        name: 'Ресторан 4 Kухни',
+                        img: 'foodhall',
+                        color: '#195734'
+                    },
+                ]
+            }
+        ]
+    
+    -
+        const foodhallSlider = [
+            {
+                img: 'foodhall2',
+                text: 'Завтраки в АРТ ЦЕНТРЕ',
+                date: '10 апреля'
+            },
+            {
+                img: 'foodhall3',
+                text: 'Без сахара',
+                date: '10 апреля'
+            },
+            {
+                img: 'foodhall2',
+                text: 'Можно в пост',
+                date: '10 апреля'
+            },
+            {
+                img: 'foodhall3',
+                text: 'Завтраки в АРТ ЦЕНТРЕ',
+                date: '10 апреля'
+            }
+        ]
+
+    .page__layout
+        +pageHeading('Фудхолл Днк')
+        .download
+            .download__card
+                .download__text
+                    p Скачайте мобильное приложение для быстрого заказа
+                    +button('Скачать приложение', 'filled')
+                    img(src="/src/images/QR.png", alt="QR").download__qr 
+        .foodhall__slider-wrapper            
+            +sliderCard(foodhallSlider, 'foodhall')
+        +tabs(foodhallItems)
+        +application('tabs__application')

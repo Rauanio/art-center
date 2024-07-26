@@ -10,7 +10,7 @@ mixin categoryCard(category)
     else if category.poster
         +posterCard(category.poster)
     else if category.slider
-        +sliderCard(category.slider.img)
+        +sliderCard(category.slider.img, 'about')
     else if category.offerCards
         each offer in category.offerCards
             +offerCard(offer)

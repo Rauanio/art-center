@@ -12,6 +12,11 @@
   height: 56px;
 }
 
+.btn__filled {
+  background-color: $black;
+  color: $white;
+}
+
 @media (min-width: 768px) {
   .btn__type {
     font-size: 16px;
