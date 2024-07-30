@@ -162,6 +162,10 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
+
+    &-item.grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .tab__card {
@@ -214,6 +218,10 @@
 
   .tabs__content-item {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tabs__content-item.grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .tab__card {

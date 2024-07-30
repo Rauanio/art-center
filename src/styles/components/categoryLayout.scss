@@ -155,7 +155,7 @@
   &-square {
     width: 4px;
     height: 4px;
-    background-color: $satured-pink;
+    background-color: $black;
     margin: 0 8px;
   }
 
@@ -182,7 +182,7 @@
     position: absolute;
     bottom: 8px;
     left: 8px;
-    background-color: $satured-green;
+    background-color: $black;
     color: $white;
     padding: 0 12px;
     height: 32px;
@@ -391,7 +391,6 @@
     transition: background-color 0.6s ease;
 
     .page__card-text {
-      color: $satured-green;
       transition: color 0.6s ease;
     }
 
@@ -406,7 +405,7 @@
     }
 
     &:hover {
-      background-color: $satured-green;
+      background-color: $black;
 
       .page__card-text {
         color: $white;

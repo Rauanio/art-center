@@ -1,7 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const globule = require('globule');
+const { DefinePlugin } = require('webpack');
 const fs = require('fs');
+const path = require('path');
 
 let mode = 'development';
 
@@ -22,6 +24,27 @@ fs.writeFile('src/blocks/components/_components.pug', mixins, (err) => {
   console.log('Mixins are generated automatically!');
 });
 
+function loadJSONFiles(dir) {
+  const files = fs.readdirSync(dir);
+  const jsonData = {};
+
+  files.forEach((file) => {
+    if (file.endsWith('.json')) {
+      const filePath = path.resolve(dir, file);
+      const fileName = path.basename(file, '.json');
+      try {
+        jsonData[fileName] = require(filePath);
+      } catch (error) {
+        console.error(`Failed to load ${fileName}:`, error);
+      }
+    }
+  });
+
+  return jsonData;
+}
+
+const mockData = loadJSONFiles(path.resolve(__dirname, 'src/mockData'));
+
 const paths = globule.find(['src/pug/pages/**/*.pug']);
 
 module.exports = {
@@ -40,7 +63,15 @@ module.exports = {
       return new HtmlWebpackPlugin({
         template: path,
         filename: `${path.split(/\/|.pug/).splice(-2, 1)}.html`,
+        templateParameters: {
+          MOCK_DATA: mockData,
+        },
       });
+    }),
+    new DefinePlugin({
+      'process.env': {
+        MOCK_DATA: JSON.stringify(mockData),
+      },
     }),
   ],
   devServer: {
@@ -49,9 +80,6 @@ module.exports = {
       directory: './src',
       watch: true,
     },
-    // historyApiFallback: {
-    //   rewrites: [{ from: /^\/$/, to: '/main.html' }],
-    // },
   },
   optimization: {
     splitChunks: {
@@ -99,9 +127,17 @@ module.exports = {
             loader: 'pug-html-loader',
             options: {
               exports: false,
+              data: {
+                MOCK_DATA: mockData,
+              },
             },
           },
         ],
+      },
+      {
+        test: /\.json$/,
+        type: 'javascript/auto',
+        loader: 'json-loader',
       },
       {
         test: /\.m?js$/,

@@ -1,5 +1,5 @@
 mixin cardItem(card)
-    a(href="#").page__category-card
+    a(href=`/shop-detail.html?id=${card.id}`).page__category-card
         .page__card-img
             if card.img
                 img(src=`/src/images/${card.img}.png`, alt=`${card.name}`)

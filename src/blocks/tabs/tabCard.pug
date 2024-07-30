@@ -1,0 +1,15 @@
+mixin tabCard(content)
+    a(href="#", style=`--card-color: ${content.color};`, class='tab__card')
+        .tab__card-wrapper
+            img(src=`/src/images/${content.img}.png`, alt=content.img).tab__card-img
+            .tab__card-banner
+                span=content.banner
+                if content.rating
+                    .tab__card-rating-wrapper
+                        svg(width="10", height="10", viewBox="0 0 10 10", fill="none", xmlns="http://www.w3.org/2000/svg")
+                            path(d="M5.39133 0.298828L6.56533 3.2745L9.75814 3.4715L10 4.21586L7.53275 6.25193L8.33203 9.34936L7.69884 9.80939L5 8.09208L2.30116 9.80939L1.66797 9.34936L2.46725 6.25193L0 4.21586L0.241856 3.4715L3.43467 3.2745L4.60867 0.298828H5.39133Z", fill="currentColor")
+                        .tab__card-rating=content.rating
+            .tab__card-triangle            
+                svg(width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z" fill="currentColor")
+        .tab__card-text=content.name

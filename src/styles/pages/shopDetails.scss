@@ -1,0 +1,238 @@
+.details__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.details {
+  &__img-wrapper {
+    position: relative;
+    max-width: 485px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__square {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    width: 24px;
+    height: 24px;
+    background-color: $white;
+  }
+
+  &__triangle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: $white;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $black;
+    padding: 8px;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 16px 16px 0px 16px;
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+
+    &-paragraph {
+      line-height: 21px;
+      font-family: Raleway;
+    }
+  }
+
+  &__line {
+    border: 1px solid $black;
+    height: 0px;
+    opacity: 0.1;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px 16px 16px;
+    gap: 24px;
+  }
+
+  &__contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-transform: uppercase;
+  }
+
+  &__messanger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__telegram,
+  &__whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $black;
+    padding: 8px;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .details__wrapper {
+    gap: 16px;
+  }
+
+  .details {
+    &__card {
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 24px 0px 24px;
+      }
+
+      &-title {
+        font-size: 28px;
+        line-height: 33.6px;
+      }
+
+      &-paragraph {
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    &__line {
+      margin-top: 8px;
+    }
+
+    &__triangle svg {
+      width: 88px;
+      height: 88px;
+    }
+
+    &__bottom {
+      padding: 24px;
+    }
+
+    &__contacts {
+      gap: 16px;
+    }
+
+    &__contacts span {
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__btns {
+      width: 100%;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    &__btns .btn {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .details__wrapper {
+    padding: 24px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .details {
+    &__img-wrapper {
+      max-width: 688px;
+    }
+
+    &__card {
+      max-width: 571px;
+      padding: 1px;
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 32px 32px 0px 32px;
+      }
+
+      &-title {
+        font-size: 32px;
+        line-height: 38.4px;
+      }
+
+      &-paragraph {
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    &__triangle svg {
+      width: 138px;
+      height: 138px;
+    }
+
+    &__square {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__line {
+      margin-top: 16px;
+    }
+
+    &__bottom {
+      padding: 32px;
+    }
+
+    &__contacts {
+      gap: 16px;
+    }
+
+    &__telegram,
+    &__whatsapp {
+      padding: 12px;
+    }
+
+    &__telegram svg,
+    &__whatsapp svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__btns {
+      width: 100%;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}
