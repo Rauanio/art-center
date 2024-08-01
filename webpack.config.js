@@ -80,6 +80,10 @@ module.exports = {
       directory: './src',
       watch: true,
     },
+    historyApiFallback: {
+      index: 'index.html',
+      rewrites: [{ from: /./, to: '/404.html' }],
+    },
   },
   optimization: {
     splitChunks: {

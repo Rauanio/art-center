@@ -1,0 +1,63 @@
+mixin blocks(blocks)
+    each block in blocks
+        if block.text
+            .accordion__content-block
+                p.accordion__content-desc=block.text
+        if block.items        
+            .accordion__content-block
+                h4.accordion__content-title=block.title
+                ul.accordion__content-items
+                    each listItem in block.items
+                        li=listItem
+        if block.desc        
+            .accordion__content-block
+                h4.accordion__content-title=block.title
+                p.accordion__content-desc=block.desc
+                   
+
+mixin accordion(items)
+    each item, index in items
+        .accordion__item
+            input(type="checkbox" id=`accordion${index}` class='accordion__item-input')
+            label(for=`accordion${index}` class='accordion__item-trigger')
+                .accordion__item-text
+                    .accordion__item-name
+                        if item.tags
+                            .accordion__item-tags
+                                each tag, index in item.tags
+                                    p.accordion__item-tag=tag
+                                    if index !== item.tags.length - 1
+                                        .accordion__item-square
+                        else 
+                            p.accordion__item-center АРТ Центр
+                        p.accordion__item-desc=item.name
+                    if item.price
+                        .accordion__item-price=item.price
+                    if item.date
+                        .accordion__item-date
+                            .accordion__date-square
+                            .accordion__date-text
+                                p Приём заявок 
+                                p=item.date
+                .accordion__item-icon
+                    .accordion__item-plus
+
+            .accordion__item-content
+                .accordion__content-wrapper
+                    +blocks(item.blocks)
+                    +button(item.button, 'accordion')
+                .accordion__content-centered
+                    if item.price
+                        .accordion__content-left=item.price
+                    if item.date
+                        .accordion__item-left
+                            .accordion__date-square
+                            .accordion__date-text
+                                p Приём заявок 
+                                p=item.date
+                    .accordion__content
+                        .accordion__content-container
+                            +blocks(item.blocks)
+                            +button(item.button, 'accordion')
+                    .accordion__content-right
+                        .accordion__content-icon

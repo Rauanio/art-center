@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+
+    -
+        const detailsSliderImg = ['poster1', 'poster2', 'poster3']
+
+    .page__layout
+        +pageHeading('Ресторан')
+        +detailsCard('restaurant-details', 'Мы знаем, что питание — основа здоровой жизни, и хотим, чтобы каждый день на вашем столе была только качественная еда', 'Приют Холостяка', 'priut.holostyaka1@gmail.com', '+7 (917) 890-10-80', 'Смотреть меню (PDF)')
+        .details__slider-wrapper
+            h3.details__slider-title Галерея
+            +sliderCard(detailsSliderImg, 'details')
+        +application('tabs__application')

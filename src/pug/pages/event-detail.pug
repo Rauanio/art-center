@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+
+    -
+        const eventSliderImgs = [
+            {
+                img: 'parent3',
+                name: "Sqwoz Bab",
+                date: '10 мая'
+            },
+            {
+                img: 'parent3',
+                name: "Баста",
+                date: '10 мая'
+            },
+            {
+                img: 'parent3',
+                name: "Sqwoz Bab",
+                date: '10 мая'
+            },
+            {
+                img: 'parent3',
+                name: "Баста",
+                date: '10 мая'
+            },
+            {
+                img: 'parent3',
+                name: "Sqwoz Bab",
+                date: '10 мая'
+            },
+            {
+                img: 'parent3',
+                name: "Баста",
+                date: '10 мая'
+            },
+        ]
+
+    .page__layout
+        +pageHeading('Мероприятие')
+        +detailsCard('event-detail', 'Новая программа, неизменные хиты, уникальные световые и видео инсталляции, специальные звездные гости концерта — все это на больших концертах главной поп-группы страны «Руки Вверх!»', 'Руки Вверх!', '', '', 'зарегистрироваться', false, 'Бесплатно')
+        .event__slider-wrapper
+            .event__slider-title Прошедшие мероприятия
+            +eventSlider(eventSliderImgs, 'event') 
+        +application('tabs__application')

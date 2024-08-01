@@ -43,6 +43,14 @@
     color: $white;
   }
 
+  .btn__filled .rolling__block:last-child {
+    color: $white;
+  }
+
+  .btn__accordion .rolling__block:last-child {
+    color: $white;
+  }
+
   .main__grid-card:hover .rolling-text .word,
   .main__grid-card.play .rolling-text .word {
     transform: translateY(-100%);

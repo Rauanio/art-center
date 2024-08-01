@@ -41,6 +41,46 @@ const swiperWithText = new Swiper('.foodhall-slider', {
     },
     1440: {
       slidesPerView: 2.5,
-    }
-  }
+    },
+  },
+});
+
+const detailsSwiper = new Swiper('.details-slider', {
+  modules: [Navigation],
+  spaceBetween: 8,
+  slidesPerView: 1.1,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 1.5,
+      spaceBetween: 16,
+    },
+    1440: {
+      slidesPerView: 1.7,
+    },
+  },
+});
+
+const eventSwiper = new Swiper('.event-slider', {
+  modules: [Navigation],
+  spaceBetween: 8,
+  slidesPerView: 1.3,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2.3,
+      spaceBetween: 16,
+    },
+    1440: {
+      slidesPerView: 4,
+    },
+  },
 });

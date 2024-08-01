@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    .error
+        .error__wrapper
+            .error__triangle
+                svg(width="64", height="64", viewBox="0 0 64 64", fill="none", xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd", clip-rule="evenodd", d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z", fill="#3A3943")
+            .error__card
+                .error__card-text
+                    h3.error__card-title 404
+                    p.error__card-desc Такой страницы не существует или она была удалена, вы можете вернуться на главную страницу
+                +button('Вернуться на главную', 'filled', 'error')
+            .error__square-wrapper    
+                .error__square   
