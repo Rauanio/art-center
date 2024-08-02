@@ -1,0 +1,37 @@
+mixin applicationTabs
+
+    - 
+        const applicationTabsItems = [
+            {
+                name: 'По телефону',
+                content: {
+                    placeholder1: 'Имя',
+                    placeholder2: 'Телефон'
+                }
+            },
+            {
+                name: 'WhatsApp',
+                content: {
+                    placeholder1: 'Имя',
+                    placeholder2: 'Телефон'
+                }
+            },
+            {
+                name: 'Telegram',
+                content: {
+                    placeholder1: '@Никнейм',
+                    placeholder2: 'Телефон'
+                }
+            }
+        ]
+
+    .application__tabs
+        .application__tabs-wrapper
+            each item, index in applicationTabsItems
+                div(class=`application__tabs-btn ${index === 0 ?  'application__tabs-btn-active' : ''}`)=item.name
+        .application__tabs-content
+            each item, index in applicationTabsItems
+                div(class=`${index === 0 ? 'application__tabs-item-active' : ''} application__tabs-item`)
+                    .application__tabs-item-wrapper
+                        input(type="text" placeholder=`${item.content.placeholder1}`) 
+                        input(type="text" placeholder=`${item.content.placeholder2}`) 

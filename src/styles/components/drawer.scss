@@ -1,0 +1,109 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  color: $black;
+
+  &__transition {
+    transition: opacity 0.3s ease;
+  }
+
+  &__show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: $black;
+    opacity: 0.5;
+  }
+
+  &__content {
+    background-color: $white;
+    max-height: 100vh;
+    padding: 8px;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    position: relative;
+
+    &-trianlge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 16px;
+    }
+
+    &-icon {
+      cursor: grab;
+      user-select: none;
+    }
+
+    &-icon span {
+      display: block;
+      width: 32px;
+      height: 3px;
+      background-color: $black;
+    }
+
+    &-heading {
+      padding: 16px;
+    }
+
+    &-title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-contact {
+      font-size: 14px;
+      line-height: 16.8px;
+      padding: 16px 16px 8px 16px;
+      opacity: 0.5;
+    }
+
+    &-agreement {
+      font-family: Raleway;
+      opacity: 0.4;
+      font-size: 12px;
+      line-height: 19.2px;
+      text-align: center;
+      padding: 0 16px 16px 16px;
+    }
+  }
+
+  &__show .drawer__content {
+    transform: translateY(0%);
+  }
+}
+
+.btn__drawer {
+  margin: 32px 16px 16px 16px;
+  background-color: $black;
+  color: $white;
+}

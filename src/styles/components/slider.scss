@@ -121,8 +121,8 @@
 
     &:hover {
       .main-slider-arrow-wrapper svg {
-        transition: all 0.6s ease;
         transform: rotate(-90deg);
+        transition: transform 0.6s ease;
       }
     }
 

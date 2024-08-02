@@ -1,0 +1,20 @@
+include ../applicationTabs/applicationTabs
+
+mixin drawer
+    .drawer
+        .drawer__overlay
+        .drawer__content
+            .drawer__content-trianlge
+                svg(width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z" fill="#3A3943")
+            .drawer__content-header
+                .drawer__content-icon
+                    span
+            .drawer__content-body
+                .drawer__content-heading
+                    p.drawer__content-title Оставьте заявку, и наш менеджер свяжется с вами удобным вам способом
+                .drawer__content-card
+                    p.drawer__content-contact Как с вами связаться?
+                    +applicationTabs
+                    +button('Оставить заявку','drawer')
+                    p.drawer__content-agreement Нажимая «Оставить заявку» вы соглашаетесь с условиями обработки персональных данных

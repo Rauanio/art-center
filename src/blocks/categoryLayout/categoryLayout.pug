@@ -14,4 +14,5 @@ mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true)
             span.page__category-block-line
             h4.page__category-title=category.title
             +categoryCard(category)
-    +application('category__application')
+    +application('category__application', 'request')
+    +drawer

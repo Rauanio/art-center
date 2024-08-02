@@ -329,17 +329,17 @@
 
   .poster-hover:hover {
     background-color: $black;
-    transition: all 0.6s ease;
+    transition: background-color 0.6s ease;
 
     .poster-desc {
       color: $white;
-      transition: all 0.6s ease;
+      transition: color 0.6s ease;
     }
 
     .poster-arrow {
       color: $white;
       transform: rotate(-90deg);
-      transition: all 0.6s ease;
+      transition: transform 0.6s ease;
     }
   }
 
@@ -362,7 +362,7 @@
     &-desc {
       padding: 32px;
       max-width: 75%;
-      transition: all 0.6s ease;
+      transition: color 0.6s ease;
     }
   }
 

@@ -34,7 +34,7 @@
       font-size: 20px;
       line-height: 20px;
       color: var(--hover-color);
-      transition: all 0.6s ease;
+      transition: color 0.6s ease;
     }
 
     &-arrow {
@@ -116,10 +116,10 @@
     }
 
     &-text {
-      transition: all 0.6s ease;
       font-size: 18px;
       line-height: 18px;
       color: var(--hover-color);
+      transition: color 0.6s ease;
     }
   }
 }
@@ -247,18 +247,18 @@
 
       &-card:hover {
         background-color: var(--hover-background);
-        transition: all 0.6s ease;
+        transition: background-color 0.6s ease;
 
         .main__grid {
           &-text,
           &-arrow svg {
             color: $white;
-            transition: all 0.6s ease;
+            transition: color 0.6s ease;
           }
 
           &-arrow svg {
-            transition: all 0.6s ease;
             transform: rotate(-90deg);
+            transition: transform 0.6s ease;
           }
         }
       }
@@ -315,11 +315,11 @@
 
     &-card:hover {
       background-color: var(--hover-background);
-      transition: all 0.6s ease;
+      transition: background-color 0.6s ease;
 
       .burger__menu-text {
         color: $white;
-        transition: all 0.6s ease;
+        transition: color 0.6s ease;
       }
     }
 

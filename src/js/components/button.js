@@ -1,5 +1,5 @@
-document
-  .getElementById('error')
-  .addEventListener('click', function () {
-    window.location.href = '/'; 
-  });
+// document
+//   .querySelector('.error')
+//   .addEventListener('click', function () {
+//     window.location.href = '/'; 
+//   });
