@@ -31,8 +31,6 @@
 
   .page__tabs-active::after,
   .page__tabs-active::before,
-  .page__category-card:hover,
-  .poster-hover:hover,
   .page__category-block::before,
   .page__category-block::after,
   .nav__menu-active,
@@ -43,6 +41,13 @@
   .btn__icon::before,
   .page__category-block-line {
     background-color: $color;
+  }
+
+  @media (min-width: 1440px) {
+    .page__category-card:hover,
+    .poster-hover:hover {
+      background-color: $color;
+    }
   }
 }
 
