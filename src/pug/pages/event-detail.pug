@@ -42,5 +42,6 @@ block content
         .event__slider-wrapper
             .event__slider-title Прошедшие мероприятия
             +eventSlider(eventSliderImgs, 'event') 
-        +application('tabs__application', 'request')
+        +application('tabs__application', 'openDrawer openModal')
+        +modal
         +drawer

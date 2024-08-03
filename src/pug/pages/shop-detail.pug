@@ -11,5 +11,6 @@ block content
         .details__slider-wrapper
             h3.details__slider-title Галерея
             +sliderCard(detailsSliderImg, 'details')
-        +application('tabs__application', 'request')
+        +application('tabs__application', 'openDrawer openModal')
+        +modal
         +drawer

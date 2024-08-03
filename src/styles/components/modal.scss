@@ -9,6 +9,7 @@
   z-index: 20;
   overflow: visible;
   min-width: 922px;
+  color: $black;
 
   &__overlay {
     display: none;
@@ -81,6 +82,14 @@
       max-width: 60%;
     }
   }
+}
+
+.btn__filled {
+  border-color: $black !important;
+}
+
+.btn__filled .rolling-text .rolling__block .word {
+  color: $white;
 }
 
 .application__tabs-modal-wrapper {
