@@ -1,0 +1,41 @@
+mixin modal
+
+    - 
+        const modalTabItems = [
+            {
+                name: 'По телефону',
+                modal: {
+                    placeholder1: 'Имя',
+                    placeholder2: 'Телефон'
+                }
+            },
+            {
+                name: 'WhatsApp',
+                modal: {
+                    placeholder1: 'Имя',
+                    placeholder2: 'Телефон'
+                }
+            },
+            {
+                name: 'Telegram',
+                modal: {
+                    placeholder1: '@Никнейм',
+                    placeholder2: 'Телефон'
+                }
+            }
+        ]
+
+    .modal__overlay
+    .modal
+        .modal__close
+            img(src="/src/images/cross.svg" alt="cross")
+        .modal__content-triangle
+            svg(width="144" height="144" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(fill-rule="evenodd" clip-rule="evenodd" d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z" fill="#3A3943")
+        .modal__content
+            .modal__content-header
+                p.modal__content-title Оставьте заявку, и наш менеджер свяжется с вами удобным вам способом
+            .modal__content-body
+                p.modal__content-contact Как с вами связаться? 
+                +applicationTabs(modalTabItems)
+                p.modal__content-agreement Нажимая «Оставить заявку» вы соглашаетесь с условиями обработки персональных данных

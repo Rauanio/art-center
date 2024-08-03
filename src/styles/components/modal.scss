@@ -1,0 +1,90 @@
+.modal {
+  background-color: $white;
+  padding: 8px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 20;
+  overflow: visible;
+  min-width: 922px;
+
+  &__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: $black;
+    opacity: 0.5;
+    z-index: 19;
+  }
+
+  &__open,
+  &__overlay-open {
+    display: block;
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    background-color: $white;
+    height: 56px;
+    width: 56px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  // &::backdrop {
+  //   background-color: $black;
+  //   opacity: 0.5;
+  // }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-body {
+      padding: 32px;
+    }
+
+    &-contact {
+      line-height: 19.2px;
+      opacity: 0.5;
+    }
+
+    &-agreement {
+      font-family: Raleway;
+      font-size: 12px;
+      line-height: 19.2px;
+      opacity: 0.4;
+      margin-top: 16px;
+    }
+
+    &-header {
+      padding: 32px;
+    }
+
+    &-triangle {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+
+    &-title {
+      font-size: 28px;
+      line-height: 33.6px;
+      max-width: 60%;
+    }
+  }
+}
+
+.application__tabs-modal-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}

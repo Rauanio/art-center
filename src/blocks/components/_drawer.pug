@@ -1,6 +1,32 @@
 include ../applicationTabs/applicationTabs
 
 mixin drawer
+
+    - 
+        const modalTabItems = [
+            {
+                name: 'По телефону',
+                drawer: {
+                    placeholder1: 'Имя',
+                    placeholder2: 'Телефон'
+                }
+            },
+            {
+                name: 'WhatsApp',
+                drawer: {
+                    placeholder1: 'Имя',
+                    placeholder2: 'Телефон'
+                }
+            },
+            {
+                name: 'Telegram',
+                drawer: {
+                    placeholder1: '@Никнейм',
+                    placeholder2: 'Телефон'
+                }
+            }
+        ]
+
     .drawer
         .drawer__overlay
         .drawer__content
@@ -15,6 +41,6 @@ mixin drawer
                     p.drawer__content-title Оставьте заявку, и наш менеджер свяжется с вами удобным вам способом
                 .drawer__content-card
                     p.drawer__content-contact Как с вами связаться?
-                    +applicationTabs
+                    +applicationTabs(modalTabItems)
                     +button('Оставить заявку','drawer')
                     p.drawer__content-agreement Нажимая «Оставить заявку» вы соглашаетесь с условиями обработки персональных данных

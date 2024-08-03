@@ -1,37 +1,13 @@
-mixin applicationTabs
-
-    - 
-        const applicationTabsItems = [
-            {
-                name: 'По телефону',
-                content: {
-                    placeholder1: 'Имя',
-                    placeholder2: 'Телефон'
-                }
-            },
-            {
-                name: 'WhatsApp',
-                content: {
-                    placeholder1: 'Имя',
-                    placeholder2: 'Телефон'
-                }
-            },
-            {
-                name: 'Telegram',
-                content: {
-                    placeholder1: '@Никнейм',
-                    placeholder2: 'Телефон'
-                }
-            }
-        ]
-
+mixin applicationTabs(items)
     .application__tabs
         .application__tabs-wrapper
-            each item, index in applicationTabsItems
+            each item, index in items
                 div(class=`application__tabs-btn ${index === 0 ?  'application__tabs-btn-active' : ''}`)=item.name
         .application__tabs-content
-            each item, index in applicationTabsItems
+            each item, index in items
                 div(class=`${index === 0 ? 'application__tabs-item-active' : ''} application__tabs-item`)
-                    .application__tabs-item-wrapper
-                        input(type="text" placeholder=`${item.content.placeholder1}`) 
-                        input(type="text" placeholder=`${item.content.placeholder2}`) 
+                    div(class=`${item.modal ?  'application__tabs-modal-wrapper' :'application__tabs-item-wrapper'}`)
+                        input(type="text" placeholder=`${item.drawer ? item.drawer.placeholder1 : item.modal.placeholder1}`) 
+                        input(type="text" placeholder=`${item.drawer ? item.drawer.placeholder2 : item.modal.placeholder2}`)
+                        if item.modal
+                            +button('Оставить заявку', 'filled')  

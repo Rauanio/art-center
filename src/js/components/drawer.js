@@ -1,24 +1,26 @@
-const openDrawerButtons = document.querySelectorAll('.request');
+const openDrawerButtons = document.querySelectorAll('.openDrawer');
 const drawer = document.querySelector('.drawer');
 const drawerOverlay = document.querySelector('.drawer__overlay');
 const drawerContent = document.querySelector('.drawer__content');
-const drawerIcon = document.querySelector('.drawer__content-icon');
+const drawerIcon = document.querySelector('.drawer__content-header');
 
 let startY = 0;
 let currentY = 0;
 let isDragging = false;
+const isDrawer = window.innerWidth < 1440;
 
-window.addEventListener('DOMContentLoaded', () => {
-  const drawer = document.querySelector('.drawer');
-  if (drawer) {
-    console.log('Drawer found, adding transition class.');
-    drawer.classList.add('drawer--transition');
-  } else {
-    console.error('Drawer not found.');
-  }
-});
+// window.addEventListener('DOMContentLoaded', () => {
+//   const drawer = document.querySelector('.drawer');
+//   if (drawer) {
+//     console.log('Drawer found, adding transition class.');
+//     drawer.classList.add('drawer--transition');
+//   } else {
+//     console.error('Drawer not found.');
+//   }
+// });
 
 const onOpenDrawer = () => {
+
   drawer.classList.add('drawer__show');
   document.body.classList.add('no-scroll');
   drawerContent.style.transform = 'translateY(0%)';
@@ -64,13 +66,16 @@ const onStopDragging = () => {
 
 document.addEventListener('mouseup', onStopDragging);
 document.addEventListener('mousemove', onDragging);
-drawerIcon.addEventListener('mousedown', onStartDragging);
+drawerIcon?.addEventListener('mousedown', onStartDragging);
 
 document.addEventListener('touchend', onStopDragging);
 document.addEventListener('touchmove', onDragging);
-drawerIcon.addEventListener('touchstart', onStartDragging);
+drawerIcon?.addEventListener('touchstart', onStartDragging);
 
-openDrawerButtons.forEach((openButton) => {
-  openButton.addEventListener('click', onOpenDrawer);
-});
-drawerOverlay.addEventListener('click', onCloseDrawer);
+if (isDrawer) {
+  openDrawerButtons.forEach((openButton) => {
+    openButton.addEventListener('click', onOpenDrawer);
+  });
+}
+
+drawerOverlay?.addEventListener('click', onCloseDrawer);

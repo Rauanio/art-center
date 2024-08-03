@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 0 16px;
+  // padding: 0 16px;
 
   &-wrapper {
     display: flex;
@@ -33,5 +33,12 @@
     &-active {
       display: block;
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .application__tabs-btn {
+    font-size: 16px;
+    line-height: 19.2px;
   }
 }
