@@ -7,6 +7,7 @@ const mainSwiper = new Swiper('.main-slider', {
   modules: [Pagination],
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
   spaceBetween: 8,
   loop: true,

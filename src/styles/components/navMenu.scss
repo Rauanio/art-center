@@ -1,6 +1,10 @@
 .nav__menu {
   padding: 8px 0 24px 0;
   display: none;
+  position: sticky;
+  top: 98px;
+  background-color: $white;
+  z-index: 10;
 
   &-wrapper {
     display: flex;

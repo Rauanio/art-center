@@ -1,0 +1,48 @@
+include ./centerMapTabs
+include ./centerDrawer
+
+mixin centerMap
+
+    -
+        const centerTabs = [
+            {
+                name: '-1',
+                content: 'map1'
+            },
+            {
+                name: '1',
+                content: 'map2'
+            },
+            {
+                name: '2',
+                content: 'map3'
+            }
+        ]
+
+    -
+        const centerDrawerItems = [
+            {
+                name:'Магазины',
+                href: '#'
+            }, 
+            {
+                name: 'Рестораны',
+                href: '#'
+            },
+            {
+                name: 'Фитнесс',
+                href: '#'
+            },
+            {
+                name: 'Офисы',
+                href: '#'
+            },
+            {
+                name: 'Коворкинг',
+                href: '#'
+            }
+        ]
+
+    .center__popup 
+        +centerMapTabs(centerTabs)
+        +centerDrawer(centerDrawerItems)

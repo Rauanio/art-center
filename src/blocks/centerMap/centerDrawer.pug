@@ -1,0 +1,10 @@
+mixin centerDrawer(items)
+    .center__drawer
+        .center__drawer-overlay
+        .center__drawer-content
+            .center__drawer-header
+                .center__drawer-drag
+                    span
+            .center__drawer-body
+                each item in items
+                    a(href=item.href class='center__drawer-item')=item.name

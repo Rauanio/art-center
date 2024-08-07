@@ -1,0 +1,34 @@
+include ./map
+
+mixin centerMapTabs(items)
+    .center__tabs
+        .center__tabs-container
+            .center__tabs-wrapper
+                .center__tabs-items
+                    each item, index in items
+                        div(class=`center__tabs-btn ${index === 0 ?  'center__tabs-btn-active' : ''} ${index === items.length - 1 && 'center__tabs-btn-last'  }`)=item.name
+                .center__tabs-select-wrapper
+                    .center__tabs-select-top
+                        .center__tabs-select-text
+                            p.center__tabs-select-title Категория
+                            svg(class="chevron-icon", width="24", height="24", viewBox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                path(d="M7 10L12 15L17 10", stroke="#3A3943", stroke-width="2")  
+                    .center__tabs-list
+                        a(href="",class='center__tabs-list-item') Магазины
+                        a(href="",class='center__tabs-list-item') Рестораны
+                        a(href="",class='center__tabs-list-item') Фитнесс
+                        a(href="",class='center__tabs-list-item') Офисы
+                        a(href="",class='center__tabs-list-item') Коворкинг
+            .center__tabs-close
+                .center__tabs-close-icon
+        .center__tabs-content
+            each item, index in items
+                div(class=`${index === 0 ? 'center__tabs-item-active' : ''} center__tabs-item`)
+                    +map
+        div(class='center__tabs-select' id='openCenterDrawer')
+            .center__tabs-select-text
+                p.center__tabs-select-title Категория
+                svg(width="24", height="24", viewBox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+                    path(d="M7 10L12 15L17 10", stroke="#3A3943", stroke-width="2")  
+
+                     

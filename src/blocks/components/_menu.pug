@@ -34,5 +34,5 @@ mixin menu
     ul.menu  
         each item in menuItems
             li
-                a(href=item.href)
+                a(href=item.href, class=`${item.name === 'Карта центра' ? 'center__popup-btn' : ''}`)
                     +roller(item.name)  

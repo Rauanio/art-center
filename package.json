@@ -39,6 +39,8 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "@panzoom/panzoom": "^4.5.1",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "css-reset-and-normalize": "^2.3.6",
     "swiper": "^11.1.5"
   }

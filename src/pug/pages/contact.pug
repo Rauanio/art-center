@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    .page__layout
+        +pageHeading('Контакты')
+        .contact__wrapper
+            .contact__cards
+                .contact__card
+                    .contact__card-address ул. Николая Ершова, 93
+                    .contact__card-city Казань
+                +footerSchedule
+                +footerContact('contact__messangers')
+            div(id="yandex-map" class='yandex-map')
+                .yandex-map-zoom
+                    button(class='yandex-map-zoom-in', id='yandex-zoom-in')
+                        .yandex-map-zoom-plus
+                    button(class='yandex-map-zoom-out', id='yandex-zoom-out') 
+                        .yandex-map-zoom-minus
+        +application('contact__application', 'openDrawer openModal')
+        +drawer
+        +modal

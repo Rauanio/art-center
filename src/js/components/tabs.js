@@ -1,7 +1,9 @@
 const tabs = document.querySelectorAll('.tabs__btn');
 const tabsContent = document.querySelectorAll('.tabs__content-item');
-const ApplicationTabs = document.querySelectorAll('.application__tabs-btn');
-const ApplicationTabsContent = document.querySelectorAll('.application__tabs-item');
+const applicationTabs = document.querySelectorAll('.application__tabs-btn');
+const applicationTabsContent = document.querySelectorAll('.application__tabs-item');
+const centerTabs = document.querySelectorAll('.center__tabs-btn');
+const centerTabsContent = document.querySelectorAll('.center__tabs-item');
 
 tabs.forEach((tab, index) =>
   tab.addEventListener('click', () => {
@@ -15,17 +17,27 @@ tabs.forEach((tab, index) =>
   })
 );
 
-
-
-ApplicationTabs.forEach((tab, index) =>
+applicationTabs.forEach((tab, index) =>
   tab.addEventListener('click', () => {
-    ApplicationTabsContent.forEach((content) =>
+    applicationTabsContent.forEach((content) =>
       content.classList.remove('application__tabs-item-active')
     );
-    ApplicationTabs.forEach((tab) => tab.classList.remove('application__tabs-btn-active'));
+    applicationTabs.forEach((tab) => tab.classList.remove('application__tabs-btn-active'));
 
-    ApplicationTabsContent[index].classList.add('application__tabs-item-active');
-    ApplicationTabs[index].classList.add('application__tabs-btn-active');
+    applicationTabsContent[index].classList.add('application__tabs-item-active');
+    applicationTabs[index].classList.add('application__tabs-btn-active');
+  })
+);
+
+centerTabs.forEach((tab, index) =>
+  tab.addEventListener('click', () => {
+    centerTabsContent.forEach((content) =>
+      content.classList.remove('center__tabs-item-active')
+    );
+    centerTabs.forEach((tab) => tab.classList.remove('center__tabs-btn-active'));
+
+    centerTabsContent[index].classList.add('center__tabs-item-active');
+    centerTabs[index].classList.add('center__tabs-btn-active');
   })
 );
 
