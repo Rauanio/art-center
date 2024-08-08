@@ -6,7 +6,7 @@ import 'swiper/css';
 const mainSwiper = new Swiper('.main-slider', {
   modules: [Pagination],
   pagination: {
-    el: '.swiper-pagination',
+    el: '.main-slider-pagination',
     clickable: true,
   },
   spaceBetween: 8,
@@ -22,8 +22,8 @@ const swiperWithNav = new Swiper('.about-slider', {
   spaceBetween: 8,
   loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: `.about-slider-button-next`,
+    prevEl: `.about-slider-button-prev`,
   },
 });
 
@@ -33,8 +33,8 @@ const swiperWithText = new Swiper('.foodhall-slider', {
   slidesPerView: 1.1,
   loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: `.foodhall-slider-button-next`,
+    prevEl: `.foodhall-slider-button-prev`,
   },
   breakpoints: {
     768: {
@@ -52,8 +52,8 @@ const detailsSwiper = new Swiper('.details-slider', {
   slidesPerView: 1.1,
   loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: `.details-slider-button-next`,
+    prevEl: `.details-slider-button-prev`,
   },
   breakpoints: {
     768: {
@@ -72,8 +72,8 @@ const eventSwiper = new Swiper('.event-slider', {
   slidesPerView: 1.3,
   loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: `.event-slider-button-next`,
+    prevEl: `.event-slider-button-prev`,
   },
   breakpoints: {
     768: {

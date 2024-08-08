@@ -27,7 +27,7 @@
         }
     ]
 mixin slider
-    .main-slider.swiper
+    div(class='main-slider swiper' data-seo-container)
         .main-slider-wrapper.swiper-wrapper
             each slide in sliderItems
                 .main-slider-slide.swiper-slide
@@ -39,7 +39,7 @@ mixin slider
                                 path(fill-rule="evenodd" clip-rule="evenodd" d="M64 64V0H0V1.58502C13.866 6.06967 25.578 12.3519 37.1246 22.6462C50.4547 36.1395 57.3648 48.9377 62.0229 64H64Z" fill="#F7F7F8")
                     .main-slider-text
                         p.main-slider-paragraph= slide.date
-                        p.main-slider-title= slide.text
+                        a(href="https://www.google.com" class='main-slider-title' data-seo-target target='_blank')= slide.text
         .main-slider-pagination.swiper-pagination
         .main-slider-arrow-wrapper 
             svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")

@@ -1,8 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.page__tabs-item');
   const categories = document.querySelectorAll('.page__category-block');
+  const header = document.querySelector('.header');
+  const navMenu = document.querySelector('.nav__menu');
+  const headerHeight = header.getBoundingClientRect().height;
+  const navHeight = navMenu.getBoundingClientRect().height;
 
-  const headerHeight = 122;
+  const topHeight = headerHeight + navHeight;
+
+  console.log(topHeight);
 
   function updateActiveTab() {
     let activeTab = null;
@@ -53,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetPosition =
           targetElement.getBoundingClientRect().top +
           window.scrollY -
-          headerHeight;
+          topHeight;
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth',
@@ -87,8 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
       );
     }
 

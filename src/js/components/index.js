@@ -11,4 +11,5 @@ export * from './centerDrawer';
 export * from './select';
 export * from './yandex-map';
 export * from './404';
+export * from './form';
 // export * from './cardDetails';

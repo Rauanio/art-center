@@ -45,10 +45,18 @@
 
     &-content {
       padding: 8px;
-      display: none;
+      // display: none;
       border: 1px solid $black;
       border-top: none;
       gap: 8px;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      transition:
+        max-height 0.3s ease-out,
+        opacity 0.3s ease-out,
+        visibility 0.3s ease-out;
     }
 
     &-text {
@@ -193,6 +201,9 @@
 .accordion__item-input:checked ~ .accordion__item-content {
   padding-top: 0;
   display: flex;
+  max-height: 500px; /* Adjust this value */
+  opacity: 1;
+  visibility: visible;
 }
 
 .accordion__item-input:checked

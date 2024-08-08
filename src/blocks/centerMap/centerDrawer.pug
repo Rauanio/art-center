@@ -7,4 +7,4 @@ mixin centerDrawer(items)
                     span
             .center__drawer-body
                 each item in items
-                    a(href=item.href class='center__drawer-item')=item.name
+                    a(href=`#${item.href}` class='center__drawer-item' data-name=item.name)=item.name

@@ -80,9 +80,6 @@
   }
 }
 
-
-
-
 .burger {
   display: none;
   position: absolute;
@@ -152,6 +149,22 @@
 
 .hidden {
   display: none;
+}
+
+[data-seo-container] {
+  position: relative;
+  cursor: pointer;
+
+  [data-seo-target] {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
 }
 
 @media (min-width: 768px) {

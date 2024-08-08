@@ -10,6 +10,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
 
+  const closeModal = () => {
+    modal.classList.remove('modal__open');
+    modalOverlay.classList.remove('modal__overlay-open');
+    enableBodyScroll(modal);
+    document.body.removeAttribute('style');
+    header.removeAttribute('style');
+  };
+
   if (isModal) {
     openModalButton?.addEventListener('click', () => {
       modal.classList.add('modal__open');
@@ -20,19 +28,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  closeModalButton?.addEventListener('click', () => {
-    modal.classList.remove('modal__open');
-    modalOverlay.classList.remove('modal__overlay-open');
-    enableBodyScroll(modal);
-    document.body.removeAttribute('style');
-    header.removeAttribute('style')
-  });
+  closeModalButton?.addEventListener('click', closeModal);
+  modalOverlay?.addEventListener('click', closeModal);
 
-  modalOverlay?.addEventListener('click', () => {
-    modal.classList.remove('modal__open');
-    modalOverlay.classList.remove('modal__overlay-open');
-    enableBodyScroll(modal);
-    document.body.removeAttribute('style');
-    header.removeAttribute('style')
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
   });
 });

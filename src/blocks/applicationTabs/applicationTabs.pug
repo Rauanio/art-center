@@ -6,8 +6,12 @@ mixin applicationTabs(items)
         .application__tabs-content
             each item, index in items
                 div(class=`${index === 0 ? 'application__tabs-item-active' : ''} application__tabs-item`)
-                    div(class=`${item.modal ?  'application__tabs-modal-wrapper' :'application__tabs-item-wrapper'}`)
-                        input(type="text" placeholder=`${item.drawer ? item.drawer.placeholder1 : item.modal.placeholder1}`) 
-                        input(type="text" placeholder=`${item.drawer ? item.drawer.placeholder2 : item.modal.placeholder2}`)
+                    form(class=`${item.modal ?  'application__tabs-modal-wrapper' : 'application__tabs-item-wrapper'}`, id="application-form")
+                        .application__tabs-input
+                            input(type="text" id='name-input' placeholder=`${item.drawer ? item.drawer.placeholder1 : item.modal.placeholder1}`) 
+                            span#name-input-error.error-message
+                        .application__tabs-input
+                            input(type="text" id='phone-input' placeholder=`${item.drawer ? item.drawer.placeholder2 : item.modal.placeholder2}`)
+                            span#phone-input-error.error-message
                         if item.modal
                             +button('Оставить заявку', 'filled')  
