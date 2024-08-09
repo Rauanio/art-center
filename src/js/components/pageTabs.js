@@ -1,3 +1,5 @@
+import { isInViewport } from './isInViewport';
+
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.page__tabs-item');
   const categories = document.querySelectorAll('.page__category-block');
@@ -16,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     categories.forEach((category) => {
       const categoryRect = category.getBoundingClientRect();
       const isInView =
-        categoryRect.top < window.innerHeight - headerHeight &&
-        categoryRect.bottom > headerHeight;
+        categoryRect.top < window.innerHeight - topHeight &&
+        categoryRect.bottom > topHeight;
 
       if (isInView) {
         const categoryId = category.getAttribute('id');
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  window.addEventListener('scroll', debounce(updateActiveTab, 50));
+  window.addEventListener('scroll', updateActiveTab);
 
   updateActiveTab();
 });
@@ -83,22 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Required elements not found');
   } else {
     categoryDrawer.classList.add('no-transition');
-
-    function isInViewport(element) {
-      if (!element) {
-        console.error('Element not found');
-        return false;
-      }
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
 
     function toggleBlockVisibility() {
       if (isInViewport(pageWrapper, -headerHeight)) {

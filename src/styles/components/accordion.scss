@@ -44,8 +44,6 @@
     }
 
     &-content {
-      padding: 8px;
-      // display: none;
       border: 1px solid $black;
       border-top: none;
       gap: 8px;
@@ -55,8 +53,7 @@
       overflow: hidden;
       transition:
         max-height 0.3s ease-out,
-        opacity 0.3s ease-out,
-        visibility 0.3s ease-out;
+        opacity 0.3s ease-out;
     }
 
     &-text {
@@ -199,9 +196,9 @@
 }
 
 .accordion__item-input:checked ~ .accordion__item-content {
-  padding-top: 0;
+  padding: 8px;
   display: flex;
-  max-height: 500px; /* Adjust this value */
+  max-height: 1200px;
   opacity: 1;
   visibility: visible;
 }

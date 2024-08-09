@@ -2,9 +2,13 @@
   padding: 8px 0 24px 0;
   display: none;
   position: sticky;
-  top: 98px;
+  top: 80px;
   background-color: $white;
   z-index: 5;
+
+  &.fixed {
+    padding: 0 0 16px 0;
+  }
 
   &-wrapper {
     display: flex;

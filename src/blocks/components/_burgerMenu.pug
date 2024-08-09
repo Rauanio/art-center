@@ -12,6 +12,29 @@ include ../footer/footerContact
         {name:'Гостям Казани', color: '#125A67', href: '/guests.html'}
     ]
 
+- 
+    const footerItems1 = [
+        { name: 'О центре', href: '/about.html' },
+        { name: 'Акции и новости', href: '/promotions.html' },
+        { name: 'Афиша', href: '/poster.html' },
+        { name: 'Фудхолл днк', href: '/foodhall.html' }
+    ]
+
+- 
+    const footerItems2 = [
+        { name: 'Паркинг', href: '/parking.html' },
+        { name: 'Услуги', href: '/services.html' },
+        { name: 'Арендаторам', href: '/tenant.html' },
+        { name: 'Рекламодателям', href: '/advertising.html' }
+    ]
+
+- 
+    const footerItems3 = [
+        { name: 'Карьера', href: '/career.html' },
+        { name: 'Тендеры', href: '/tenders.html' },
+        { name: 'Контакты', href: '/contact.html' }
+    ]
+
 mixin burgerCards  
     .burger__menu-cards
         each card in firstCardsItems 
@@ -30,7 +53,7 @@ mixin burgerMenu(isVisible)
         .burger__menu
             .burger__menu-wrapper 
                 +burgerCards
-                +footerMenu('burger__footer-menu')
+                +footerMenu('burger__footer-menu', footerItems1, footerItems2, footerItems3)
                 +decorBlock
                 +footerSchedule('burger__footer-schedule')
                 +footerContact('burger__footer-contact')

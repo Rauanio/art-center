@@ -1,3 +1,5 @@
+import { isInViewport } from './isInViewport';
+
 document.addEventListener('DOMContentLoaded', () => {
   const openCenterDrawerButtons =
     document.querySelectorAll('#openCenterDrawer');
@@ -12,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawerItems = document.querySelectorAll('.center__drawer-item');
   const drawerTriggerTitle = document.querySelector('.category__drawer-title');
   const header = document.querySelector('.header');
+  const pageCategoryBlocks = document.querySelectorAll('.page__category-block');
 
   let startY = 0;
   let currentY = 0;
@@ -110,6 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
     drawerTriggerTitle.textContent = clickedItemName;
     onCloseDrawer();
   };
+  window.addEventListener('scroll', () => {
+    pageCategoryBlocks.forEach((category) => {
+      if (isInViewport(category, -headerHeight)) {
+        const categoryId = category.getAttribute('id');
+
+        drawerTriggerTitle.textContent = categoryId;
+      }
+    });
+  });
 
   document.addEventListener('mouseup', onStopDragging);
   document.addEventListener('mousemove', onDragging);

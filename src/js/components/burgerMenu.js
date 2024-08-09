@@ -7,11 +7,13 @@ window.addEventListener('DOMContentLoaded', () => {
   const centerPopup = document.querySelector('.center__popup');
   const centerPopupBtn = document.querySelector('.center__popup-btn');
   const closeCenterPopup = document.querySelector('.center__tabs-close');
+  const header = document.querySelector('.header');
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
 
   function toggleMenu() {
     const isVisible = burgerMenu.classList.toggle('burger__visible');
+    header.classList.toggle('header__burger')
     menuButton.classList.toggle('is-open');
 
     if (isVisible) {

@@ -2,10 +2,33 @@ include footerMenu
 include footerSchedule
 include footerContact
 
+- 
+  var itemsFirst = [
+    { name: 'О центре', href: '/about.html' },
+    { name: 'Акции и новости', href: '/promotions.html' },
+    { name: 'Афиша', href: '/poster.html' },
+    { name: 'Фудхолл днк', href: '/foodhall.html' }
+  ]
+
+- 
+  var itemsSecond = [
+    { name: 'Паркинг', href: '/parking.html' },
+    { name: 'Услуги', href: '/services.html' },
+    { name: 'Арендаторам', href: '/tenant.html' },
+    { name: 'Рекламодателям', href: '/advertising.html' }
+  ]
+
+- 
+  var itemsThird = [
+    { name: 'Карьера', href: '/career.html' },
+    { name: 'Тендеры', href: '/tenders.html' },
+    { name: 'Контакты', href: '/contact.html' }
+  ]
+
 mixin footer
   footer.footer
     .footer__top-wrapper
-      +footerMenu
+      +footerMenu('', itemsFirst, itemsSecond, itemsThird)
       .footer__bottom-wrapper  
         +footerSchedule
         +footerContact       

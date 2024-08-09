@@ -1,5 +1,5 @@
 .header {
-  padding: 24px 16px;
+  padding: 16px 8px;
   width: 100%;
   background-color: $white;
   position: fixed;
@@ -12,6 +12,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__wrapper svg {
+    width: 102px;
+    height: 32px;
+  }
+
+  &__burger {
+    padding: 24px 16px !important;
+  }
+
+  &__burger .header__wrapper svg {
+    width: 126px;
+    height: 40px;
+  }
+
+  &.fixed {
+    padding: 8px;
   }
 }
 
@@ -75,8 +93,12 @@
     padding: 16px;
 
     &__wrapper svg {
-      width: 152px;
-      height: 48px;
+      width: 126px;
+      height: 40px;
+    }
+
+    &.fixed {
+      padding: 8px 16px;
     }
   }
 
@@ -110,6 +132,10 @@
     padding: 24px;
     max-width: 1440px;
     margin: 0 auto;
+
+    &.fixed {
+      padding: 16px 24px;
+    }
   }
 
   .menu {

@@ -1,39 +1,25 @@
-- 
-  var itemsFirst = [
-    { name: 'О центре', href: '/about.html' },
-    { name: 'Акции и новости', href: '/promotions.html' },
-    { name: 'Афиша', href: '/poster.html' },
-    { name: 'Фудхолл днк', href: '/foodhall.html' }
-  ]
-
-- 
-  var itemsSecond = [
-    { name: 'Паркинг', href: '/parking.html' },
-    { name: 'Услуги', href: '/services.html' },
-    { name: 'Арендаторам', href: '/tenant.html' },
-    { name: 'Рекламодателям', href: '/advertising.html' }
-  ]
-
-- 
-  var itemsThird = [
-    { name: 'Карьера', href: '/career.html' },
-    { name: 'Тендеры', href: '/tenders.html' },
-    { name: 'Контакты', href: '/contact.html' }
-  ]
-
-
-mixin footerMenu(cls='')
+mixin footerMenu(cls='', items1, items2, items3)
   .footer__menu(class=cls)
     ul.footer__menu-items
-      each item in itemsFirst
+      each item in items1
         li
           a(href=item.href)= item.name 
+      li(class='footer__menu-hidden')
+        a(href="/parking.html") Паркинг  
+      li(class='footer__menu-hidden')
+        a(href="/services.html") Услуги  
     ul.footer__menu-items
-      each item in itemsSecond
+      each item in items2
         li
           a(href=item.href)= item.name
+      li(class='footer__menu-hidden')
+        a(href="/career.html") Карьера  
+      li(class='footer__menu-hidden')
+        a(href="/tenders.html") Тендеры
+      li(class='footer__menu-hidden')
+        a(href="/contact.html") Контакты
     ul.footer__menu-items
-      each item in itemsThird
+      each item in items3
         li
           a(href=item.href)= item.name
     .footer__menu-square
