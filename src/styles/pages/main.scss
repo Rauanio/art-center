@@ -355,6 +355,7 @@
 
   .burger__footer-menu {
     grid-template-columns: 1fr 1fr;
+    border-color: $black;
   }
 
   .burger__footer-menu .footer__menu-items:nth-child(3) {
@@ -369,7 +370,7 @@
     gap: 24px;
   }
 
-  .burger__footer-menu  .footer__menu-hidden {
+  .burger__footer-menu .footer__menu-hidden {
     display: block;
   }
 
