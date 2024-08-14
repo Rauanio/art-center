@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
   const navMenu = document.querySelector('.nav__menu');
   const headerHeight = header.getBoundingClientRect().height;
-  const navHeight = navMenu.getBoundingClientRect().height;
+  const navHeight = navMenu?.getBoundingClientRect().height;
 
-  const topHeight = headerHeight + navHeight;
+  const topHeight = headerHeight + (navHeight ? navHeight : 0);
 
   console.log(topHeight);
 

@@ -100,6 +100,10 @@
     &.fixed {
       padding: 8px 16px;
     }
+
+    &__burger {
+      padding: 16px !important;
+    }
   }
 
   .btn__menu {
@@ -135,6 +139,10 @@
 
     &.fixed {
       padding: 16px 24px;
+    }
+
+    &__burger {
+      padding: 24px !important;
     }
   }
 

@@ -4,7 +4,8 @@ mixin sliderCard(images, cls='')
             div(class=`swiper-wrapper ${cls}-slider-wrapper`)
                 each slide in images
                     div(class=`swiper-slide ${cls}-slider-slide`)
-                        img(src=`/src/images/${slide.text ? slide.img : slide}.png`, alt='Slider Image')
+                        div(class=`${cls}-image-wrapper`)
+                            img(src=`/src/images/${slide.text ? slide.img : slide}.png`, alt='Slider Image')
                         if slide.text
                             .slider__on-top
                                 .slider__date=slide.date

@@ -87,6 +87,7 @@
   &-img {
     width: 100%;
     max-height: 258px;
+    object-fit: cover;
   }
 
   &-triangle svg {
@@ -210,11 +211,27 @@
 
     &-arrow {
       padding: 32px;
+      transition: 0.3s ease-out;
     }
 
     &-arrow svg {
       width: 32px;
       height: 32px;
+    }
+
+    &-pagination {
+      transition: 0.3s ease-out;
+    }
+
+    &-pagination:hover {
+      background-color: $black;
+      color: $white;
+      transition: all 0.3s ease-out;
+
+      .tabs__content-arrow {
+        transform: rotate(-90deg);
+        transition: transform 0.3s ease-out;
+      }
     }
   }
 

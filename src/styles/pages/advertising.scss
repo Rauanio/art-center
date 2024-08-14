@@ -14,6 +14,7 @@
   &-paragraph {
     font-size: 20px;
     line-height: 24px;
+    max-width: 40%;
   }
 
   &-bottom {
@@ -231,7 +232,7 @@
 
   .advertising__manager {
     &-wrapper {
-      grid-template-columns: 50% 49%;
+      grid-template-columns: 48% 51%;
       gap: 16px;
       border: 1px solid $black;
       padding: 8px;
@@ -240,6 +241,10 @@
     &-card {
       border: none;
       padding: 0;
+    }
+
+    &-paragraph {
+      max-width: 80%;
     }
 
     &-paragraph,

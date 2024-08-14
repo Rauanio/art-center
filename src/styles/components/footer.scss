@@ -177,6 +177,16 @@
     &__contact {
       flex-direction: row;
       justify-content: space-between;
+
+      &-messanger {
+        height: 48px;
+        width: 48px;
+      }
+    }
+
+    &__contact-messanger svg {
+      height: 32px;
+      width: 32px;
     }
 
     &__menu-square {

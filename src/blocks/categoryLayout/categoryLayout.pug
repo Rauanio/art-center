@@ -2,13 +2,13 @@ include ../application/application.pug
 include ./categoryCard.pug
 include ./categoryDrawer.pug
 
-mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true)
+mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true, cls)
   .page__layout
     if showMenu
       +navMenu(page)
     +pageHeading(page)
     .category__layout-content 
-      +pageTabs(tabItems)
+      +pageTabs(tabItems, cls)
       .page__wrapper
         each category in categoryCards
           .page__category-block(id=category.title)

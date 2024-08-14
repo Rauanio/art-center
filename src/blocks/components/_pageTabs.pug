@@ -1,6 +1,6 @@
-mixin pageTabs(pageTabsItems=[])
+mixin pageTabs(pageTabsItems=[], cls='')
   .page__tabs-wrapper
-    .page__tabs-items
+    div(class=`page__tabs-items ${cls}`)
       each tab, index in pageTabsItems
         - const isLastItem = index === pageTabsItems.length - 1
         a(href=`#${tab.href}`, class=`page__tabs-item  ${isLastItem && 'page__tabs-last'}`) 
