@@ -46,6 +46,14 @@
       padding: 8px;
     }
 
+    &-pagination-category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $black;
+      padding: 8px;
+    }
+
     &-wrapper {
       padding: 16px;
     }
@@ -74,10 +82,14 @@
 
 .tab__card {
   border: 1px solid var(--card-color);
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 8px;
   padding: 8px;
+
+  &:nth-child(-n + 6) {
+    display: flex;
+  }
 
   &-wrapper {
     position: relative;
@@ -157,6 +169,10 @@
       line-height: 28.8px;
     }
 
+    &-pagination {
+      grid-column: span 2;
+    }
+
     &-arrow {
       padding: 24px;
     }
@@ -221,6 +237,23 @@
 
     &-pagination {
       transition: 0.3s ease-out;
+      grid-column: span 3;
+    }
+
+    &-pagination-category {
+      transition: 0.3s ease-out;
+      grid-column: span 2;
+
+      &:hover {
+        background-color: $black;
+        color: $white;
+        transition: all 0.3s ease-out;
+
+        .tabs__content-arrow {
+          transform: rotate(-90deg);
+          transition: transform 0.3s ease-out;
+        }
+      }
     }
 
     &-pagination:hover {

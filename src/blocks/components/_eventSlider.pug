@@ -1,5 +1,5 @@
 mixin eventSlider(images, cls='')
-    div(class=`${cls}-slider-card`)
+    div(class=`${cls}-slider-card` data-seo-container)
         div(class=`swiper ${cls}-slider`)
             div(class=`swiper-wrapper ${cls}-slider-wrapper`)
                 each slide in images
@@ -7,7 +7,7 @@ mixin eventSlider(images, cls='')
                         div(class=`${cls}-slider-box`)
                             img(src=`/src/images/${slide.img}.png`, alt='Slider Image')
                             div(class=`${cls}-slider-text`)
-                                p(class=`${cls}-slider-heading`)=slide.name
+                                a(href="/event-detail.html" class=`${cls}-slider-heading` data-seo-target)=slide.name
                                 p(class=`${cls}-slider-date`)=slide.date
 
     div(class=`swiper-navigation ${cls}-slider-navigation`)

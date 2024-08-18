@@ -1,5 +1,5 @@
 mixin tabCard(content)
-    a(href="#", style=`--card-color: ${content.color};`, class='tab__card')
+    a(href=content.href, style=`--card-color: ${content.color};`, class='tab__card')
         .tab__card-wrapper
             img(src=`/src/images/${content.img}.png`, alt=content.img).tab__card-img
             .tab__card-banner

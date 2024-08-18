@@ -13,4 +13,6 @@ export * from './yandex-map';
 export * from './404';
 export * from './form';
 export * from './fixed';
+export * from './pagination';
+export * from './calendar';
 // export * from './cardDetails';

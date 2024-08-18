@@ -17,23 +17,19 @@ include ../footer/footerContact
         { name: 'О центре', href: '/about.html' },
         { name: 'Акции и новости', href: '/promotions.html' },
         { name: 'Афиша', href: '/poster.html' },
-        { name: 'Фудхолл днк', href: '/foodhall.html' }
+        { name: 'Фудхолл днк', href: '/foodhall.html' },
+        { name: 'Паркинг', href: '/parking.html' }
     ]
 
 - 
     const footerItems2 = [
-        { name: 'Паркинг', href: '/parking.html' },
         { name: 'Услуги', href: '/services.html' },
         { name: 'Арендаторам', href: '/tenant.html' },
-        { name: 'Рекламодателям', href: '/advertising.html' }
-    ]
-
-- 
-    const footerItems3 = [
-        { name: 'Карьера', href: '/career.html' },
-        { name: 'Тендеры', href: '/tenders.html' },
+        { name: 'Рекламодателям', href: '/advertising.html' },
+        { name: 'Карьера и тендеры', href: '/career-and-tenders.html' },
         { name: 'Контакты', href: '/contact.html' }
     ]
+
 
 mixin burgerCards  
     .burger__menu-cards
@@ -53,7 +49,7 @@ mixin burgerMenu(isVisible)
         .burger__menu
             .burger__menu-wrapper 
                 +burgerCards
-                +footerMenu('burger__footer-menu', footerItems1, footerItems2, footerItems3)
+                +footerMenu('burger__footer-menu', footerItems1, footerItems2)
                 +decorBlock
                 +footerSchedule('burger__footer-schedule')
                 +footerContact('burger__footer-contact')

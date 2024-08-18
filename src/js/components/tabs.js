@@ -1,3 +1,5 @@
+import { initializePagination } from "./pagination";
+
 const tabs = document.querySelectorAll('.tabs__btn');
 const tabsContent = document.querySelectorAll('.tabs__content-item');
 const applicationTabs = document.querySelectorAll('.application__tabs-btn');
@@ -14,6 +16,8 @@ tabs.forEach((tab, index) =>
 
     tabsContent[index].classList.add('tabs__content-active');
     tabs[index].classList.add('tabs__btn-active');
+
+    initializePagination()
   })
 );
 

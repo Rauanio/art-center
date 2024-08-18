@@ -1,0 +1,150 @@
+.calendar {
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-start;
+  gap: 8px;
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+
+  &__month-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  &__month {
+    border-bottom: 1px solid $black;
+    padding: 8px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &__days {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__btn {
+    border: 1px solid $black;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn.right svg {
+    transform: rotate(180deg);
+  }
+
+  &__day {
+    padding: 8px 14px;
+    min-width: 48px;
+    max-height: 48px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 16px;
+
+    &::before {
+      content: attr(data-day-of-week);
+      display: block;
+      font-size: 10px;
+      line-height: 10px;
+      color: $black;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__day.weekend {
+    &::before {
+      color: $satured-pink;
+    }
+  }
+
+  &__day.active {
+    background-color: $black;
+    color: $white;
+
+    &::before {
+      color: $white;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar {
+    gap: 32px;
+
+    &__day {
+      padding: 8px 14px;
+      min-width: 64px;
+      min-height: 64px;
+      font-size: 18px;
+      line-height: 18px;
+
+      &::before {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &__month {
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__btn {
+      padding: 19px;
+    }
+
+    &__btn svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .calendar {
+    gap: 32px;
+    padding: 24px 0;
+
+    &__day {
+      padding: 8px 14px;
+      min-width: 64px;
+      min-height: 64px;
+      font-size: 18px;
+      line-height: 18px;
+
+      &::before {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &__month {
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__btn {
+      padding: 19px;
+    }
+
+    &__btn svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

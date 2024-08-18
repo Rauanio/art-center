@@ -1,0 +1,19 @@
+.career-and-tenders {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+@media (min-width: 768px) {
+  .career-and-tenders {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .career-and-tenders {
+    gap: 24px;
+    padding: 24px 0;
+  }
+}

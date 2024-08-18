@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    .page__layout
+        +pageHeading('Карьера и тендеры')
+        .career-and-tenders
+            +advertisingManager
+            +advertisingPoster('career','Карьера в Арт Центре', 'Смотрите наши актуальные вакансии на сайте UD Group и становитесь частью нашей команды', true)
+            +advertisingPoster('tender','Тендеры', 'Смотрите наши тендеры на сайте UD Group и делайте Арт Центр лучше вместе с нами', true)
+            +application('','openDrawer openModal')
+            +modal
+            +drawer
+        

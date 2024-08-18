@@ -11,13 +11,22 @@ mixin tabs(tabItems)
                     if item.cards
                         each card in item.cards
                             +cardItem(card)
+                        if item.cards.length > 6
+                            button.tabs__content-pagination-category
+                                    .tabs__content-wrapper
+                                        p Показать ещё 6 из #{item.cards.length}
+                                    .tabs__content-arrow
+                                        svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                            path(fill-rule="evenodd" clip-rule="evenodd" d="M14.4556 18.2996L2 17.9791L2.10449 22L19.2971 22L19.318 21.9789L19.8962 21.3937L20.4883 20.8013L20.8018 20.4947L21.3939 19.9023L21.9721 19.317L21.993 19.2963L22 2.10446L17.9805 2L18.3079 15.0314L18.3218 15.4006L6.21456 3.28926L3.28875 6.20906L15.4239 18.3554L14.4556 18.2996Z" fill="currentColor")
                     else
                         each content in item.content
-                            +tabCard(content)  
-            button.tabs__content-pagination
-                .tabs__content-wrapper
-                    p Показать ещё 6 из 56
-                .tabs__content-arrow
-                    svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(fill-rule="evenodd" clip-rule="evenodd" d="M14.4556 18.2996L2 17.9791L2.10449 22L19.2971 22L19.318 21.9789L19.8962 21.3937L20.4883 20.8013L20.8018 20.4947L21.3939 19.9023L21.9721 19.317L21.993 19.2963L22 2.10446L17.9805 2L18.3079 15.0314L18.3218 15.4006L6.21456 3.28926L3.28875 6.20906L15.4239 18.3554L14.4556 18.2996Z" fill="currentColor")
+                            +tabCard(content) 
+                        if item.content.length > 6
+                            button.tabs__content-pagination
+                                .tabs__content-wrapper
+                                    p Показать ещё 6 из #{item.content.length}
+                                .tabs__content-arrow
+                                    svg(width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                        path(fill-rule="evenodd" clip-rule="evenodd" d="M14.4556 18.2996L2 17.9791L2.10449 22L19.2971 22L19.318 21.9789L19.8962 21.3937L20.4883 20.8013L20.8018 20.4947L21.3939 19.9023L21.9721 19.317L21.993 19.2963L22 2.10446L17.9805 2L18.3079 15.0314L18.3218 15.4006L6.21456 3.28926L3.28875 6.20906L15.4239 18.3554L14.4556 18.2996Z" fill="currentColor")
+
 

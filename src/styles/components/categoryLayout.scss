@@ -61,11 +61,15 @@
 }
 
 .page__category-card {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 8px;
   padding: 8px;
   border: 1px solid;
+
+  &:nth-child(-n+6) {
+    display: flex;
+  }
 }
 
 .page__category-poster {

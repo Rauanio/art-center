@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
   let currentY = 0;
   let isDragging = false;
   const isDrawer = window.innerWidth < 1440;
-  console.log(isDrawer, 'Inner Width');
 
   // window.addEventListener('DOMContentLoaded', () => {
   //   const drawer = document.querySelector('.drawer');

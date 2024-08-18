@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const topHeight = headerHeight + (navHeight ? navHeight : 0);
 
-  console.log(topHeight);
-
   function updateActiveTab() {
     let activeTab = null;
 

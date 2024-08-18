@@ -359,20 +359,8 @@
     border-color: $black;
   }
 
-  .burger__footer-menu .footer__menu-items:nth-child(3) {
-    display: none;
-  }
-
-  .burger__footer-menu .footer__menu-items:nth-child(2) li:nth-child(-n + 2) {
-    display: none;
-  }
-
   .burger__footer-menu .footer__menu-items {
     gap: 24px;
-  }
-
-  .burger__footer-menu .footer__menu-hidden {
-    display: block;
   }
 
   .burger__footer-contact {

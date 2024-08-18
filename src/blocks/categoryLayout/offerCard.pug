@@ -1,5 +1,5 @@
 mixin offerCard(offer)
-    a(href="#").offer__card
+    a(href=offer.href).offer__card
         .offer__card-text
             h4.offer__card-title=offer.name
             p.offer__card-desc=offer.desc
