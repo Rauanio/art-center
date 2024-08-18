@@ -15,4 +15,5 @@ export * from './form';
 export * from './fixed';
 export * from './pagination';
 export * from './calendar';
+export * from './preLoader';
 // export * from './cardDetails';

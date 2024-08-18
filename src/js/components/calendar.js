@@ -2,6 +2,7 @@ const daysContainer = document?.querySelector('.calendar__days');
 const monthNameContainer = document?.querySelector('.calendar__month');
 const leftArrow = document?.querySelector('.calendar__btn.left');
 const rightArrow = document?.querySelector('.calendar__btn.right');
+const prevDayContainer = document.querySelector('.calendar__prev-day');
 
 const months = [
   'Январь',
@@ -26,6 +27,24 @@ let currentYear = currentDate.getFullYear();
 
 function formatDay(day) {
   return day < 10 ? `0${day}` : day;
+}
+
+function renderPrevDay(month, year) {
+  if (!prevDayContainer) {
+    return;
+  }
+  const prevMonthDate = new Date(year, month, 0);
+  const day = formatDay(prevMonthDate.getDate());
+  const dayOfWeek = weekdays[prevMonthDate.getDay()];
+  const monthName = months[prevMonthDate.getMonth()];
+
+  prevDayContainer.innerHTML = `
+  <div class="month">${monthName}</div>
+  <div class="calendar__prev-wrapper">
+    <div class="weekday">${dayOfWeek}</div>
+    <div class="day">${day}</div>
+  </div>
+  `;
 }
 
 function renderDays(month, year) {
@@ -85,10 +104,12 @@ function changeMonth(offset) {
     currentYear--;
   }
 
+  renderPrevDay(currentMonth, currentYear);
   renderDays(currentMonth, currentYear);
 }
 
 leftArrow?.addEventListener('click', () => changeMonth(-1));
 rightArrow?.addEventListener('click', () => changeMonth(1));
 
+renderPrevDay(currentMonth, currentYear);
 renderDays(currentMonth, currentYear);
