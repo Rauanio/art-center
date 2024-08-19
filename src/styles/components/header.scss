@@ -12,13 +12,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+  }
+
+  &__menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__map {
+    border: 1px solid $black;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__logo {
     padding: 4px;
   }
 
-  &__wrapper svg {
+  &__logo svg {
     width: 102px;
     height: 32px;
   }
@@ -27,7 +43,7 @@
     padding: 8px 8px 24px 8px;
   }
 
-  &__burger .header__wrapper svg {
+  &__burger .header__logo svg {
     width: 126px;
     height: 40px;
   }
@@ -92,13 +108,18 @@
   .header {
     padding: 16px;
 
-    &__wrapper svg {
+    &__logo svg {
       width: 126px;
       height: 40px;
     }
 
     &__burger {
       padding: 16px;
+    }
+
+    &__map {
+      height: 48px;
+      width: 48px;
     }
   }
 
@@ -135,6 +156,10 @@
 
     &__burger {
       padding: 16px 24px;
+    }
+
+    &__map {
+      display: none;
     }
   }
 

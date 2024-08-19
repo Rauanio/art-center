@@ -1,7 +1,7 @@
 @import '../components/index.scss';
 
 .main {
-  padding: 16px 0;
+  padding: 0 0 16px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -131,10 +131,6 @@
   }
 }
 
-.burger__footer-contact {
-  align-items: center;
-}
-
 .footer__menu-hidden {
   display: none;
 }
@@ -184,8 +180,6 @@
 
 @media (min-width: 768px) {
   .main {
-    // margin-top: 80px;
-
     &__grid-cards {
       grid-template-columns: 1fr 1fr;
       gap: 16px;
@@ -260,6 +254,9 @@
 
 @media (min-width: 1440px) {
   .main {
+    padding: 0 0 24px 0;
+    gap: 24px;
+
     &__grid {
       grid-template-columns: 1.4fr 1fr;
       gap: 16px;
@@ -374,11 +371,12 @@
 
   .burger__footer-contact {
     grid-column-end: 3;
+    align-items: center;
   }
 
   .block {
     height: 680px;
-    top: 112px;
+    top: 82px;
   }
 
   .decor {
