@@ -17,11 +17,12 @@ mixin categoryLayout(page='', tabItems=[], categoryCards=[], showMenu=true, cls)
             +categoryCard(category)
 
     +application('category__application', 'openDrawer openModal')
-    .category__drawer-trigger(id='openCenterDrawer')
-      .category__drawer-text
-        p.category__drawer-title=tabItems[0].name
-        svg(width="15", height="8", viewBox="0 0 15 8", fill="none", xmlns="http://www.w3.org/2000/svg")
-          path(fill-rule="evenodd", clip-rule="evenodd", d="M6.13586 4.79449L1.60488 0L0.142578 1.54813L6.56194 8L6.57762 7.99993L7.01203 7.99728L7.4543 7.99717L7.68582 7.99977L8.1281 7.99966L8.5625 7.99702L8.57806 7.99707L14.9997 1.54812L13.5379 0.000520365L8.79452 5.01368L8.66187 5.15745L6.47657 5.17881L6.13586 4.79449Z", fill="#F7F7F8")
+    if showMenu
+      .category__drawer-trigger(id='openCenterDrawer')
+        .category__drawer-text
+          p.category__drawer-title=tabItems[0].name
+          svg(width="15", height="8", viewBox="0 0 15 8", fill="none", xmlns="http://www.w3.org/2000/svg")
+            path(fill-rule="evenodd", clip-rule="evenodd", d="M6.13586 4.79449L1.60488 0L0.142578 1.54813L6.56194 8L6.57762 7.99993L7.01203 7.99728L7.4543 7.99717L7.68582 7.99977L8.1281 7.99966L8.5625 7.99702L8.57806 7.99707L14.9997 1.54812L13.5379 0.000520365L8.79452 5.01368L8.66187 5.15745L6.47657 5.17881L6.13586 4.79449Z", fill="#F7F7F8")
     +centerDrawer(tabItems)
     +modal
     +drawer

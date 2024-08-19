@@ -88,7 +88,6 @@
     padding: 8px 14px;
     min-width: 48px;
     max-height: 48px;
-    cursor: pointer;
     font-size: 16px;
     line-height: 16px;
 
@@ -184,6 +183,14 @@
   .calendar {
     gap: 32px;
     padding: 24px 0;
+
+    &__days {
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
 
     &__day {
       padding: 8px 14px;

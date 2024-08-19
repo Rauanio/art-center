@@ -10,6 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
 
+  console.log(scrollBarWidth, 'scroll');
+
   const closeModal = () => {
     modal.classList.remove('modal__open');
     modalOverlay.classList.remove('modal__overlay-open');

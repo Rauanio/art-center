@@ -5,25 +5,28 @@ window.addEventListener('DOMContentLoaded', () => {
   const menuButtonText = document.querySelector('.btn__menu-text');
   const burgerMenu = document.querySelector('.burger');
   const centerPopup = document.querySelector('.center__popup');
-  const centerPopupBtn = document.querySelector('.center__popup-btn');
+  const centerPopupBtn = document.querySelectorAll('.center__popup-btn');
   const closeCenterPopup = document.querySelector('.center__tabs-close');
   const header = document.querySelector('.header');
+  const headerWrapper = document.querySelector('.header__wrapper');
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
 
   function toggleMenu() {
     const isVisible = burgerMenu.classList.toggle('burger__visible');
-    header.classList.toggle('header__burger')
+    header.classList.toggle('header__burger');
     menuButton.classList.toggle('is-open');
 
     if (isVisible) {
       disableBodyScroll(burgerMenu);
       document.body.style.paddingRight = scrollBarWidth + 'px';
+      headerWrapper.style.marginRight = scrollBarWidth + 'px';
       menuButtonText.textContent = 'Закрыть';
     } else {
       enableBodyScroll(burgerMenu);
       menuButtonText.textContent = 'Меню';
       document.body.removeAttribute('style');
+      headerWrapper.removeAttribute('style');
     }
   }
 
@@ -40,6 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   menuButton.addEventListener('click', toggleMenu);
-  centerPopupBtn.addEventListener('click', togglePopup);
+  centerPopupBtn.forEach((btn) => {
+    btn.addEventListener('click', togglePopup);
+  });
   closeCenterPopup.addEventListener('click', closePopup);
 });

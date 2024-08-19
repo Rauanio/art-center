@@ -35,11 +35,21 @@
     height: 31px;
   }
 
+  .burger__menu-card .rolling-text {
+    font-size: 24px;
+    line-height: 25px;
+    height: 25px;
+  }
+
   .main__grid-card .word {
     transition: transform 0.6s ease;
   }
 
   .main__grid-card .rolling__block:last-child {
+    color: $white;
+  }
+
+  .burger__menu-card .rolling__block:last-child {
     color: $white;
   }
 
@@ -53,6 +63,19 @@
 
   .main__grid-card:hover .rolling-text .word,
   .main__grid-card.play .rolling-text .word {
+    transform: translateY(-100%);
+  }
+
+  .burger__menu-card:hover .rolling-text .word,
+  .burger__menu-card.play .rolling-text .word {
+    transform: translateY(-100%);
+  }
+
+  .btn:hover .rolling-text .word {
+    transform: translateY(-100%);
+  }
+
+  .nav__menu-item:hover .rolling-text .word {
     transform: translateY(-100%);
   }
 

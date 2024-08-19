@@ -16,12 +16,16 @@
 
   &__menu {
     display: grid;
-    gap: 32px;
 
     &-items {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    &-items:nth-child(2) {
+      margin-bottom: 32px;
     }
 
     &-square {

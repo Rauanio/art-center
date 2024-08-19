@@ -19,7 +19,11 @@ const mainSwiper = new Swiper('.main-slider', {
 });
 
 const swiperWithNav = new Swiper('.about-slider', {
-  modules: [Navigation],
+  modules: [Navigation, Autoplay],
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   spaceBetween: 8,
   loop: true,
   navigation: {

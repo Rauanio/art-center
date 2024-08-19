@@ -1,5 +1,5 @@
 .header {
-  padding: 16px 8px;
+  padding: 8px;
   width: 100%;
   background-color: $white;
   position: fixed;
@@ -14,22 +14,22 @@
     align-items: center;
   }
 
+  &__logo {
+    padding: 4px;
+  }
+
   &__wrapper svg {
     width: 102px;
     height: 32px;
   }
 
   &__burger {
-    padding: 24px 16px !important;
+    padding: 8px 8px 24px 8px;
   }
 
   &__burger .header__wrapper svg {
     width: 126px;
     height: 40px;
-  }
-
-  &.fixed {
-    padding: 8px;
   }
 }
 
@@ -97,12 +97,8 @@
       height: 40px;
     }
 
-    &.fixed {
-      padding: 8px 16px;
-    }
-
     &__burger {
-      padding: 16px !important;
+      padding: 16px;
     }
   }
 
@@ -133,16 +129,12 @@
 
 @media (min-width: 1440px) {
   .header {
-    padding: 24px;
+    padding: 16px 24px;
     max-width: 1440px;
     margin: 0 auto;
 
-    &.fixed {
-      padding: 16px 24px;
-    }
-
     &__burger {
-      padding: 24px !important;
+      padding: 16px 24px;
     }
   }
 
@@ -152,6 +144,8 @@
     align-items: center;
     font-size: 18px;
     line-height: 18px;
+    position: absolute;
+    left: 244.5px;
   }
 
   .btn__menu {

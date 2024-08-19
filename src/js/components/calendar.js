@@ -113,3 +113,34 @@ rightArrow?.addEventListener('click', () => changeMonth(1));
 
 renderPrevDay(currentMonth, currentYear);
 renderDays(currentMonth, currentYear);
+
+document.addEventListener('DOMContentLoaded', function () {
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+
+  daysContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - daysContainer.offsetLeft;
+    scrollLeft = daysContainer.scrollLeft;
+    daysContainer.style.cursor = 'grabbing';
+  });
+
+  daysContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+    daysContainer.style.cursor = 'grab';
+  });
+
+  daysContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+    daysContainer.style.cursor = 'grab';
+  });
+
+  daysContainer.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - daysContainer.offsetLeft;
+    const walk = (x - startX) * 2;
+    daysContainer.scrollLeft = scrollLeft - walk;
+  });
+});

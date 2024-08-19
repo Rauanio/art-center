@@ -118,7 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isInViewport(category, -headerHeight)) {
         const categoryId = category.getAttribute('id');
 
-        drawerTriggerTitle.textContent = categoryId;
+        if (drawerTriggerTitle) {
+          drawerTriggerTitle.textContent = categoryId;
+        }
       }
     });
   });

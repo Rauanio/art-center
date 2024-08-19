@@ -143,6 +143,7 @@
     &-active {
       opacity: 1;
       pointer-events: auto;
+      border: 1px solid rgba(70, 68, 81, 1);
     }
 
     &-item {
@@ -156,6 +157,11 @@
     padding: 19px 24px;
     border: 1px solid rgba(70, 68, 81, 0.1);
     cursor: pointer;
+
+    &-active {
+      border: 1px solid rgba(70, 68, 81, 1);
+      border-bottom: none;
+    }
 
     &-text {
       display: flex;
