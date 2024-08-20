@@ -53,6 +53,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
+    publicPath: '/',  
     clean: true,
   },
   plugins: [

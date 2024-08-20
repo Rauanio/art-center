@@ -75,6 +75,14 @@
     transform: translateY(-100%);
   }
 
+  .tabs__btn:hover .rolling-text .word {
+    transform: translateY(-100%);
+  }
+
+  .tabs__btn-active:hover .rolling-text .word {
+    transform: translateY(0%);
+  }
+
   .nav__menu-item:hover .rolling-text .word {
     transform: translateY(-100%);
   }

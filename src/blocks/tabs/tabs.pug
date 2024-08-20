@@ -4,7 +4,9 @@ mixin tabs(tabItems, calendar=false)
     .tabs
         .tabs__wrapper
             each item, index in tabItems 
-                div(class=`tabs__btn ${index === 0 ? 'tabs__btn-active' : ''}`)= item.name
+                div(class=`tabs__btn ${index === 0 ? 'tabs__btn-active' : ''}`)
+                    p.tabs__btn-paragraph=item.name
+                    +roller(item.name)
         if calendar        
             +calendar
         .tabs__content
