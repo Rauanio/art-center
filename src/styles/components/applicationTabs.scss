@@ -9,6 +9,10 @@
     gap: 16px;
   }
 
+  &-button {
+    grid-column: span 3;
+  }
+
   &-btn {
     padding: 8px 0;
     font-size: 14px;
