@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 8px 0;
+    padding: 16px 0;
   }
 
   &__slider-title {
@@ -150,21 +150,6 @@
         padding: 24px 24px 0px 24px;
       }
 
-      &__slider-wrapper {
-        padding: 16px 0;
-        gap: 16px;
-      }
-
-      &__slider-title {
-        padding: 24px 0;
-        font-size: 32px;
-        line-height: 38.4px;
-      }
-
-      &-slider-slide img {
-        min-height: 313px;
-      }
-
       &-title {
         font-size: 28px;
         line-height: 33.6px;
@@ -174,6 +159,21 @@
         font-size: 18px;
         line-height: 27px;
       }
+    }
+
+    &__slider-wrapper {
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    &__slider-title {
+      padding: 24px 0;
+      font-size: 32px;
+      line-height: 38.4px;
+    }
+
+    &-slider-slide img {
+      min-height: 313px;
     }
 
     &__line {

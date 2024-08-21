@@ -198,11 +198,21 @@
       min-height: 64px;
       font-size: 18px;
       line-height: 18px;
+      border: 1px solid transparent; 
+      transition:
+        border-color 0.6s ease,
+        border-width 0.6s ease;
 
       &::before {
         font-size: 12px;
         line-height: 12px;
         margin-bottom: 12px;
+      }
+
+      &:hover {
+        border-color: $black; 
+        border-width: 1px; 
+        border-top: none;
       }
     }
 
