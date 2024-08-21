@@ -47,12 +47,28 @@
 }
 
 .error-message {
-  color: $satured-red;
+  color: $satured-pink;
+  display: none;
+  padding: 0 24px;
+}
+
+.input__error {
+  border-color: $satured-pink;
+}
+
+.application__tabs-baseline {
+  width: 100%;
+  margin-top: 16px;
 }
 
 @media (min-width: 1440px) {
   .application__tabs-btn {
     font-size: 16px;
     line-height: 19.2px;
+  }
+
+  .application__tabs-baseline {
+    align-self: baseline !important;
+    margin-top: 0;
   }
 }

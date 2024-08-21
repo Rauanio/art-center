@@ -1,0 +1,44 @@
+include ../application/application.pug
+
+
+mixin textPageLayout(page='', tabItems=[], categoryCards=[], showMenu=true, cls)
+  .page__layout
+    +pageHeading(page)
+    .category__layout-content 
+      +pageTabs(tabItems, cls)
+      .text__page-wrapper
+        each card in categoryCards
+          if card.image
+            img(src=`/src/images/${card.image}.png`, alt="poster" class="text__page-image", id=card.id)
+          else if card.textBlock
+            .text__page-block
+              p.text__page-block-text=card.textBlock.text1  
+              p.text__page-block-text=card.textBlock.text2
+              .text__page-block-btns 
+                +button(card.textBlock.button1, 'filled')  
+                +button(card.textBlock.button2)  
+          else if card.title
+            .text__page-list(id=card.title)
+              p(class=`text__page-list-title ${card.title === 'Заголовок H3' ? 'text__page-list-title3' : ''} ${card.title === 'Заголовок H4' ? 'text__page-list-title4' : ''} ${card.title === 'Заголовок H5' ? 'text__page-list-title5' : ''}`)=card.title
+              if card.list
+                ul.text__page-list-wrapper
+                  each item in card.list
+                    li.text__page-list-item
+                      .text__page-list-square
+                        .text__page-list-square-item
+                      p.text__page-list-text=item 
+              else if card.desc
+                p.text__page-desc=card.desc
+          else if card.slider
+            .text__page-slider-wrapper
+              +sliderCard(card.slider, 'text')        
+    +application('category__application', 'openDrawer openModal')
+    if showMenu
+      .category__drawer-trigger(id='openCenterDrawer')
+        .category__drawer-text
+          p.category__drawer-title=tabItems[0].name
+          svg(width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M6.13586 4.79449L1.60488 0L0.142578 1.54813L6.56194 8L6.57762 7.99993L7.01203 7.99728L7.4543 7.99717L7.68582 7.99977L8.1281 7.99966L8.5625 7.99702L8.57806 7.99707L14.9997 1.54812L13.5379 0.000520365L8.79452 5.01368L8.66187 5.15745L6.47657 5.17881L6.13586 4.79449Z" fill="#F7F7F8")
+    +centerDrawer(tabItems)
+    +modal
+    +drawer

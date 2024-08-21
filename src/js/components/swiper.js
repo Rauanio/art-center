@@ -71,6 +71,25 @@ const detailsSwiper = new Swiper('.details-slider', {
   },
 });
 
+const textSwiper = new Swiper('.text-slider', {
+  modules: [Navigation],
+  spaceBetween: 8,
+  slidesPerView: 1.1,
+  loop: true,
+  navigation: {
+    nextEl: `.text-slider-button-next`,
+    prevEl: `.text-slider-button-prev`,
+  },
+  breakpoints: {
+    768: {
+      spaceBetween: 16,
+    },
+    1440: {
+      slidesPerView: 1.2,
+    },
+  },
+});
+
 const eventSwiper = new Swiper('.event-slider', {
   modules: [Navigation],
   spaceBetween: 8,

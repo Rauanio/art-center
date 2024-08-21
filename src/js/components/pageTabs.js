@@ -2,7 +2,9 @@ import { isInViewport } from './isInViewport';
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.page__tabs-item');
-  const categories = document.querySelectorAll('.page__category-block');
+  const categories = document.querySelectorAll(
+    '.page__category-block, .text__page-list, .text__page-image'
+  );
   const header = document.querySelector('.header');
   const navMenu = document.querySelector('.nav__menu');
   const headerHeight = header.getBoundingClientRect().height;
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const pageWrapper = document.querySelector('.page__tabs-items');
+  const footer = document.querySelector('.footer');
   const categoryDrawer = document.querySelector('.category__drawer-trigger');
   const header = document.querySelector('.header');
   const headerHeight = header.getBoundingClientRect().height;
@@ -86,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleBlockVisibility() {
       if (isInViewport(pageWrapper, -headerHeight)) {
+        categoryDrawer.classList.remove('visible');
+      } else if (isInViewport(footer, -headerHeight)) {
         categoryDrawer.classList.remove('visible');
       } else {
         categoryDrawer.classList.add('visible');

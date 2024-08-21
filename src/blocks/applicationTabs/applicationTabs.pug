@@ -15,7 +15,7 @@ mixin applicationTabs(items)
                             span#phone-input-error.error-message
                         if (item.drawer && item.drawer.placeholder3) || (item.modal && item.modal.placeholder3)
                             .application__tabs-input
-                                input(type="text" id='phone-input' placeholder=`${item.drawer ? item.drawer.placeholder3 : item.modal.placeholder3}`)
-                                span#phone-input-error.error-message
-                        if item.modal
-                            +button('Оставить заявку', `filled ${item.modal && item.modal.placeholder3 ? 'application__tabs-button': ''}`)
+                                input(type="text" id='nickname-input' placeholder=`${item.drawer ? item.drawer.placeholder3 : item.modal.placeholder3}`)
+                                span#nickname-input-error.error-message
+                        
+                        +button('Оставить заявку', `filled ${item.modal && item.modal.placeholder3 ? 'application__tabs-button': 'application__tabs-baseline'}`)

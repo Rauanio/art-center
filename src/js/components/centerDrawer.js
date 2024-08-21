@@ -115,33 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', () => {
-    // Check if the user has scrolled to the bottom of the page
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-      // Hide all the openCenterDrawer buttons
-      openCenterDrawerButtons.forEach((button) => {
-        button.style.transform = 'translateY(100%)';
-        button.style.opacity = '0';
-        button.style.pointerEvents = 'none';
-      });
-    } else {
-      // Show the buttons when not at the bottom of the page
-      openCenterDrawerButtons.forEach((button) => {
-        button.style.transform = 'translateY(0)';
-        button.style.opacity = '1';
-        button.style.pointerEvents = 'auto';
-      });
+    pageCategoryBlocks.forEach((category) => {
+      if (isInViewport(category, -headerHeight)) {
+        const categoryId = category.getAttribute('id');
 
-      // Continue updating the drawer trigger title
-      pageCategoryBlocks.forEach((category) => {
-        if (isInViewport(category, -headerHeight)) {
-          const categoryId = category.getAttribute('id');
-
-          if (drawerTriggerTitle) {
-            drawerTriggerTitle.textContent = categoryId;
-          }
+        if (drawerTriggerTitle) {
+          drawerTriggerTitle.textContent = categoryId;
         }
-      });
-    }
+      }
+    });
   });
 
   document.addEventListener('mouseup', onStopDragging);

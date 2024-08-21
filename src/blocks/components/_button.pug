@@ -1,4 +1,4 @@
 mixin button(text='Кнопка', cls='', modalCls='')
-    button(class=`btn btn__type btn__${cls} ${modalCls}` type='submit')
+    button(class=`btn btn__type btn__${cls} ${modalCls}`, type='submit')
         span.btn__text=text
         +roller(text) 

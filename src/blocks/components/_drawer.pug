@@ -8,14 +8,14 @@ mixin drawer
                 name: 'По телефону',
                 drawer: {
                     placeholder1: 'Имя',
-                    placeholder2: 'Телефон'
+                    placeholder2: 'Телефон12'
                 }
             },
             {
                 name: 'WhatsApp',
                 drawer: {
                     placeholder1: 'Имя',
-                    placeholder2: 'Телефон'
+                    placeholder2: 'Телефон22'
                 }
             },
             {
@@ -43,5 +43,5 @@ mixin drawer
                 .drawer__content-card
                     p.drawer__content-contact Как с вами связаться?
                     +applicationTabs(modalTabItems)
-                    +button('Оставить заявку','drawer')
+                    //- +button('Оставить заявку', 'drawer')
                     p.drawer__content-agreement Нажимая «Оставить заявку» вы соглашаетесь с условиями обработки персональных данных

@@ -148,22 +148,6 @@
     line-height: 33.6px;
   }
 
-  .contact__messangers
-    .footer__contact-messanger
-    .rolling-svg
-    .rolling__svg-wrapper {
-    transform: translateY(0%);
-  }
-
-  .contact__messangers .footer__contact-messanger {
-    transition: 0.3s ease;
-  }
-
-  .contact__messangers .footer__contact-messanger:hover {
-    background-color: $black;
-    color: $white;
-  }
-
   .contact__cards {
     order: 2;
     gap: 16px;
