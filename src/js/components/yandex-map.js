@@ -1,3 +1,7 @@
+import placemark1 from '../../images/placemark1.png';
+import placemark2 from '../../images/placemark2.png'
+import placemark3 from '../../images/placemark3.png'
+
 document.addEventListener('DOMContentLoaded', () => {
   function init() {
 
@@ -28,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {},
       {
         iconLayout: 'default#image',
-        iconImageHref: '/images/placemark1.png',
+        iconImageHref: placemark1,
         iconImageSize: [87, 48],
         iconImageOffset: [-41, -25],
       }
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {},
       {
         iconLayout: 'default#image',
-        iconImageHref: '../../images/placemark2.png',
+        iconImageHref: 'https://www.figma.com/design/t6sPO4M5yq9AwkXSbOEIAT/%D0%90%D0%A0%D0%A2-%D0%A6%D0%B5%D0%BD%D1%82%D1%80?node-id=1351-14859&t=9P1JADpMKHX0dUhy-4',
         iconImageSize: [101, 48],
         iconImageOffset: [0, -40],
       }
@@ -50,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {},
       {
         iconLayout: 'default#image',
-        iconImageHref: '../../images/placemark3.png',
+        iconImageHref: placemark3,
         iconImageSize: [75, 55],
         iconImageOffset: [-60, -10],
       }
