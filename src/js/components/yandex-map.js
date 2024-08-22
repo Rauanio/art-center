@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {},
       {
         iconLayout: 'default#image',
-        iconImageHref: '/src/images/placemark1.png',
+        iconImageHref: '/images/placemark1.png',
         iconImageSize: [87, 48],
         iconImageOffset: [-41, -25],
       }

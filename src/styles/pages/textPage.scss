@@ -167,7 +167,11 @@
     &-wrapper {
       gap: 64px;
       padding: 24px 0px 120px 0px;
-      max-width: 806px  ;
+      max-width: 806px;
+    }
+
+    &-heading {
+      max-width: 50%;
     }
 
     &-block {

@@ -8,39 +8,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
   const navMenu = document.querySelector('.nav__menu');
   const headerHeight = header.getBoundingClientRect().height;
-  const navHeight = navMenu?.getBoundingClientRect().height;
+  const navHeight = navMenu ? navMenu.getBoundingClientRect().height : 0;
+  const topHeight = headerHeight + navHeight;
 
-  const topHeight = headerHeight + (navHeight ? navHeight : 0);
+  let previousActiveTab = null;
 
   function updateActiveTab() {
     let activeTab = null;
 
     categories.forEach((category) => {
       const categoryRect = category.getBoundingClientRect();
-      const isInView =
-        categoryRect.top < window.innerHeight - topHeight &&
-        categoryRect.bottom > topHeight;
+      const isAtTop =
+        categoryRect.top <= topHeight + 16 &&
+        categoryRect.bottom >= topHeight + 16;
 
-      if (isInView) {
+      if (isAtTop) {
         const categoryId = category.getAttribute('id');
+
         activeTab = document.querySelector(
           `.page__tabs-item[href="#${categoryId}"]`
         );
       }
     });
 
+    if (!activeTab) {
+      activeTab = previousActiveTab;
+    }
+
+    if (!activeTab) {
+      activeTab = tabs[0];
+    }
+
     tabs.forEach((tab) => tab.classList.remove('page__tabs-active'));
     if (activeTab) {
       activeTab.classList.add('page__tabs-active');
+      previousActiveTab = activeTab;
     }
-  }
-
-  function debounce(fn, delay) {
-    let debounceTimeout;
-    return function (...args) {
-      clearTimeout(debounceTimeout);
-      debounceTimeout = setTimeout(() => fn.apply(this, args), delay);
-    };
   }
 
   if (tabs.length > 0) {
