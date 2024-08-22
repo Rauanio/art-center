@@ -1,8 +1,7 @@
 const daysContainer = document?.querySelector('.calendar__days');
-const monthNameContainer = document?.querySelector('.calendar__month');
 const leftArrow = document?.querySelector('.calendar__btn.left');
 const rightArrow = document?.querySelector('.calendar__btn.right');
-const prevDayContainer = document.querySelector('.calendar__prev-day');
+const calendarWrapper = document.querySelector('.calendar__wrapper');
 
 const months = [
   'Январь',
@@ -29,33 +28,18 @@ function formatDay(day) {
   return day < 10 ? `0${day}` : day;
 }
 
-function renderPrevDay(month, year) {
-  if (!prevDayContainer) {
-    return;
-  }
-  const prevMonthDate = new Date(year, month, 0);
-  const day = formatDay(prevMonthDate.getDate());
-  const dayOfWeek = weekdays[prevMonthDate.getDay()];
-  const monthName = months[prevMonthDate.getMonth()];
-
-  prevDayContainer.innerHTML = `
-  <div class="month">${monthName}</div>
-  <div class="calendar__prev-wrapper">
-    <div class="weekday">${dayOfWeek}</div>
-    <div class="day">${day}</div>
-  </div>
-  `;
-}
-
-function renderDays(month, year) {
-  if (!daysContainer || !monthNameContainer) {
-    console.error('Required elements are not found in the DOM.');
-    return;
-  }
-
-  daysContainer.innerHTML = '';
-  monthNameContainer.textContent = months[month];
+function renderDaysForMonth(month, year) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const monthContainer = document.createElement('div');
+  monthContainer.classList.add('calendar__month-view');
+
+  const monthElement = document.createElement('div');
+  monthElement.classList.add('calendar__month');
+  monthElement.textContent = months[month];
+  monthContainer.appendChild(monthElement);
+
+  const daysElement = document.createElement('div');
+  daysElement.classList.add('calendar__days');
 
   for (let day = 1; day <= daysInMonth; day++) {
     const date = new Date(year, month, day);
@@ -79,68 +63,87 @@ function renderDays(month, year) {
     }
 
     dayElement.addEventListener('click', () => {
-      const currentlyActiveDay = daysContainer.querySelector(
+      const currentlyActiveDay = daysElement.querySelector(
         '.calendar__day.active'
       );
       if (currentlyActiveDay) {
         currentlyActiveDay.classList.remove('active');
       }
-
       dayElement.classList.add('active');
     });
 
-    daysContainer.appendChild(dayElement);
-  }
-}
-
-function changeMonth(offset) {
-  currentMonth += offset;
-
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  } else if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
+    daysElement.appendChild(dayElement);
   }
 
-  renderPrevDay(currentMonth, currentYear);
-  renderDays(currentMonth, currentYear);
+  monthContainer.appendChild(daysElement);
+  return monthContainer;
 }
 
-leftArrow?.addEventListener('click', () => changeMonth(-1));
-rightArrow?.addEventListener('click', () => changeMonth(1));
+function renderAllMonths() {
+  if (!calendarWrapper) {
+    console.error('Required element is not found in the DOM.');
+    return;
+  }
 
-renderPrevDay(currentMonth, currentYear);
-renderDays(currentMonth, currentYear);
+  // Clear any existing content
+  calendarWrapper.innerHTML = '';
+
+  for (let month = 0; month < 12; month++) {
+    const monthView = renderDaysForMonth(month, currentYear);
+    calendarWrapper.appendChild(monthView);
+  }
+
+  // Ensure that the scroll position is updated after rendering
+  requestAnimationFrame(() => {
+    const currentMonthElement = calendarWrapper.children[currentMonth];
+    currentMonthElement.scrollIntoView({
+      inline: 'center',
+      behavior: 'smooth',
+    });
+  });
+}
+
+function handleArrowClick(offset) {
+  const newScrollPosition = calendarWrapper.scrollLeft + offset;
+  calendarWrapper.scrollTo({ left: newScrollPosition, behavior: 'smooth' });
+}
+
+leftArrow?.addEventListener('click', () =>
+  handleArrowClick(-calendarWrapper.clientWidth)
+);
+rightArrow?.addEventListener('click', () =>
+  handleArrowClick(calendarWrapper.clientWidth)
+);
 
 document.addEventListener('DOMContentLoaded', function () {
+  renderAllMonths();
+
   let isDragging = false;
   let startX;
   let scrollLeft;
 
-  daysContainer.addEventListener('mousedown', (e) => {
+  calendarWrapper.addEventListener('mousedown', (e) => {
     isDragging = true;
-    startX = e.pageX - daysContainer.offsetLeft;
-    scrollLeft = daysContainer.scrollLeft;
-    daysContainer.style.cursor = 'grabbing';
+    startX = e.pageX - calendarWrapper.offsetLeft;
+    scrollLeft = calendarWrapper.scrollLeft;
+    calendarWrapper.style.cursor = 'grabbing';
   });
 
-  daysContainer.addEventListener('mouseleave', () => {
+  calendarWrapper.addEventListener('mouseleave', () => {
     isDragging = false;
-    daysContainer.style.cursor = 'grab';
+    calendarWrapper.style.cursor = 'grab';
   });
 
-  daysContainer.addEventListener('mouseup', () => {
+  calendarWrapper.addEventListener('mouseup', () => {
     isDragging = false;
-    daysContainer.style.cursor = 'grab';
+    calendarWrapper.style.cursor = 'grab';
   });
 
-  daysContainer.addEventListener('mousemove', (e) => {
+  calendarWrapper.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
     e.preventDefault();
-    const x = e.pageX - daysContainer.offsetLeft;
+    const x = e.pageX - calendarWrapper.offsetLeft;
     const walk = (x - startX) * 2;
-    daysContainer.scrollLeft = scrollLeft - walk;
+    calendarWrapper.scrollLeft = scrollLeft - walk;
   });
 });

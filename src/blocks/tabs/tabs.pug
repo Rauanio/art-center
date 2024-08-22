@@ -8,7 +8,7 @@ mixin tabs(tabItems, calendar=false)
                     p.tabs__btn-paragraph=item.name
                     +roller(item.name)
         if calendar        
-            +calendar
+            +calendar(2024)
         .tabs__content
             each item, index in tabItems
                 div(class=`${index === 0 ? 'tabs__content-active' : ''} tabs__content-item ${item.cards ? 'grid': ''}`)
