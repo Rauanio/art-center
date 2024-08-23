@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     modalOverlay.classList.remove('modal__overlay-open');
     enableBodyScroll(modal);
     document.body.removeAttribute('style');
-    header.removeAttribute('style');
+    // header.removeAttribute('style');
   };
 
   if (isModal) {
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
       modalOverlay.classList.add('modal__overlay-open');
       disableBodyScroll(modal);
       document.body.style.paddingRight = scrollBarWidth + 'px';
-      header.style.marginRight = scrollBarWidth + 'px';
+      // header.style.marginRight = scrollBarWidth + 'px';
     });
   }
 

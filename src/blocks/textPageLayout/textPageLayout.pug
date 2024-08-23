@@ -12,8 +12,8 @@ mixin textPageLayout(page='', tabItems=[], categoryCards=[], showMenu=true, cls)
             img(src=`/src/images/${card.image}.png`, alt="poster" class="text__page-image", id=card.id)
           else if card.textBlock
             .text__page-block
-              p.text__page-block-text=card.textBlock.text1  
-              p.text__page-block-text=card.textBlock.text2
+              p.text__page-block-text!=card.textBlock.text1  
+              p.text__page-block-text!=card.textBlock.text2
               .text__page-block-btns 
                 +button(card.textBlock.button1, 'filled')  
                 +button(card.textBlock.button2)  

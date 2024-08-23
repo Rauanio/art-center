@@ -45,6 +45,14 @@
     background-color: $color;
   }
 
+  .burger__footer-menu,
+  .burger__footer-schedule,
+  .burger__footer-contact,
+  .burger__footer-contact .footer__contact-messanger,
+  .burger__footer-schedule .footer__schedule-line {
+    border-color: $black;
+  }
+
   @media (min-width: 1440px) {
     .page__category-card:hover,
     .poster-hover:hover {

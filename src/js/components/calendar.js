@@ -85,7 +85,6 @@ function renderAllMonths() {
     return;
   }
 
-  // Clear any existing content
   calendarWrapper.innerHTML = '';
 
   for (let month = 0; month < 12; month++) {
@@ -93,7 +92,6 @@ function renderAllMonths() {
     calendarWrapper.appendChild(monthView);
   }
 
-  // Ensure that the scroll position is updated after rendering
   requestAnimationFrame(() => {
     const currentMonthElement = calendarWrapper.children[currentMonth];
     currentMonthElement.scrollIntoView({

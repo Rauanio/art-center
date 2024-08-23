@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { pages } from './pages';
 
 window.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.btn__menu');
@@ -11,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const headerWrapper = document.querySelector('.header__wrapper');
   const scrollBarWidth =
     window.innerWidth - document.documentElement.clientWidth;
+  const pathname = window.location.pathname;
 
   function toggleMenu() {
     const isVisible = burgerMenu.classList.toggle('burger__visible');
@@ -19,11 +21,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (isVisible) {
       disableBodyScroll(burgerMenu);
+      document.body.removeAttribute('class');
       document.body.style.paddingRight = scrollBarWidth + 'px';
       headerWrapper.style.marginRight = scrollBarWidth + 'px';
       menuButtonText.textContent = 'Закрыть';
     } else {
       enableBodyScroll(burgerMenu);
+      pages.map((page) => {
+        if (pathname.includes(page)) {
+          document.body.setAttribute('class', page);
+        }
+      });
       menuButtonText.textContent = 'Меню';
       document.body.removeAttribute('style');
       headerWrapper.removeAttribute('style');

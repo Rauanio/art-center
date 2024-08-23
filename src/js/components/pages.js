@@ -1,4 +1,4 @@
-const pages = [
+export const pages = [
   'purchases',
   'parents',
   'activity',
