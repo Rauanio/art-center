@@ -17,4 +17,5 @@ export * from './pagination';
 export * from './calendar';
 export * from './preLoader';
 export * from './rollingSvg';
+export * from './calendar2';
 // export * from './cardDetails';
