@@ -14,7 +14,6 @@ export * from './404';
 export * from './form';
 export * from './fixed';
 export * from './pagination';
-export * from './calendar';
 export * from './preLoader';
 export * from './rollingSvg';
 export * from './calendar2';
