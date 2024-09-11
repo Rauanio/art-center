@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentMonthIndex = new Date().getMonth();
   const calendarWrapper = document.querySelector('.calendar2-wrapper');
   const months = document.querySelectorAll('.calendar2');
-
   const currentMonthElement = months[currentMonthIndex];
 
   if (currentMonthElement) {
@@ -152,4 +151,23 @@ document.addEventListener('DOMContentLoaded', () => {
       parseFloat(window.getComputedStyle(calendarWrapper).paddingLeft);
     calendarWrapper.scrollTo({ left: scrollTo, behavior: 'smooth' });
   }
+
+  calendarWrapper.addEventListener('scroll', () => {
+    let closestMonth = months[0];
+    let minDiff = Math.abs(
+      closestMonth.offsetLeft - calendarWrapper.scrollLeft
+    );
+
+    months.forEach((month) => {
+      const diff = Math.abs(month.offsetLeft - calendarWrapper.scrollLeft);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestMonth = month;
+      }
+    });
+
+    const activeMonthIndex = [...months].indexOf(closestMonth);
+    const monthHeader = document.querySelector('.calendar2-header');
+    if (monthHeader) monthHeader.textContent = monthNames[activeMonthIndex];
+  });
 });

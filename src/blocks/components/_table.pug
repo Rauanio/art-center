@@ -1,0 +1,56 @@
+-
+    const tableData = [
+        {
+            row1: 'Семейная',
+            row2: '4.7%',
+            row3: '61 523 ₽',
+            row4: 'от 10%'
+        },
+        {
+            row1: 'Семейная',
+            row2: '4.7%',
+            row3: '61 523 ₽',
+            row4: 'от 10%'
+        },
+        {
+            row1: 'Семейная',
+            row2: '4.7%',
+            row3: '61 523 ₽',
+            row4: 'от 10%'
+        },
+        {
+            row1: 'Семейная',
+            row2: '4.7%',
+            row3: '61 523 ₽',
+            row4: 'от 10%'
+        },
+        {
+            row1: 'Семейная',
+            row2: '4.7%',
+            row3: '61 523 ₽',
+            row4: 'от 10%'
+        },
+        {
+            row1: 'Семейная',
+            row2: '4.7%',
+            row3: '61 523 ₽',
+            row4: 'от 10%'
+        }
+    ]
+
+mixin table
+    .table-wrapper
+        table
+            thead
+                tr
+                    th Ипотека
+                    th Ставка
+                    th Платеж
+                    th Взнос
+            tbody
+                each row in tableData
+                    tr
+                        td= row.row1
+                        td= row.row2
+                        td= row.row3
+                        td= row.row4

@@ -19,19 +19,27 @@ mixin textPageLayout(page='', tabItems=[], categoryCards=[], showMenu=true, cls)
                 +button(card.textBlock.button2)  
           else if card.title
             .text__page-list(id=card.title)
-              p(class=`text__page-list-title ${card.title === 'Заголовок H3' ? 'text__page-list-title3' : ''} ${card.title === 'Заголовок H4' ? 'text__page-list-title4' : ''} ${card.title === 'Заголовок H5' ? 'text__page-list-title5' : ''}`)=card.title
+              case card.title
+                when 'Заголовок H3'
+                  h3(class=`text__page-list-title text__page-list-title3`)= card.title
+                when 'Заголовок H4'
+                  h4(class=`text__page-list-title text__page-list-title4`)= card.title
+                when 'Заголовок H5'
+                  h5(class=`text__page-list-title text__page-list-title5`)= card.title
+                default
+                  h2(class='text__page-list-title')= card.title
               if card.list
                 ul.text__page-list-wrapper
                   each item in card.list
                     li.text__page-list-item
-                      .text__page-list-square
-                        .text__page-list-square-item
                       p.text__page-list-text=item 
               else if card.desc
                 p.text__page-desc=card.desc
           else if card.slider
             .text__page-slider-wrapper
-              +sliderCard(card.slider, 'text')        
+              +sliderCard(card.slider, 'text')       
+          else if card.table
+            +table 
     +application('category__application', 'openDrawer openModal')
     if showMenu
       .category__drawer-trigger(id='openCenterDrawer')

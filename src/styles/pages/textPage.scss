@@ -74,27 +74,24 @@
     &-text {
       font-size: 14px;
       line-height: 21px;
+      position: relative;
+      padding-left: 35px;
+
+      &::before {
+        content: '';
+        background-color: #dbc397;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 8px;
+        left: 16px;
+      }
     }
 
     &-item {
       display: flex;
       gap: 8px;
       font-family: Raleway;
-    }
-
-    &-square {
-      position: relative;
-      min-width: 27px;
-      min-height: 21px;
-
-      &-item {
-        position: absolute;
-        background-color: #dbc397;
-        width: 6px;
-        height: 6px;
-        top: 8px;
-        left: 13px;
-      }
     }
   }
 }
